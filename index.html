@@ -1,0 +1,343 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title>My First Website</title>
+
+    <style>
+        body {
+            background-color: lightblue;
+            margin: 0;
+            padding: 20px;
+            font-family: Arial, sans-serif;
+        }
+
+        h1 {
+            color: darkblue;
+            text-align: center;
+            font-size: 35px;
+            margin-bottom: 10px;
+        }
+
+        h2 {
+            color: green;
+            text-align: center;
+        }
+
+        #goal {
+            margin-top:30px;
+            margin-bottom: 10px;
+        }
+        #contact {
+            margin-top: 30px;
+            margin-bottom: 10px;
+        }
+       
+        p {
+           font-size: 18px;
+           line-height: 1.6;
+           text-align: center;
+        }
+
+        img {
+            width: 400px;
+            height: auto;
+            display: block;
+            margin: 20px auto;
+            border: 3px solid black;
+            border-radius: 20px;
+            box-shadow: 0 4px 10px gray;
+        }
+
+        .gallery {
+    display: flex;
+    justify-content: center;
+    gap: 15px;
+}
+
+.gallery img {
+    width: 30%;
+    height: auto;
+}
+        
+        button {
+            background-color: darkblue;
+            color: white;
+            padding: 10px 20px;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+            transition: 0.3s;
+            font-size: 16px;
+            box-shadow: 0 4px 8px gray;
+            margin-top: 10px;
+        }
+
+        button:hover {
+            background-color: green;
+            transform: scale(1.05);
+        }
+
+        nav a:hover {
+            color: white;
+            background-color: green;
+        }
+
+        .button-box {
+            text-align: center;
+            margin-top: 30px;
+            margin-bottom: 20px;
+        }   
+        nav {
+            background-color: white;
+            padding: 15px;
+            text-align: center;
+            margin-bottom: 20px;
+            border-radius: 10px;
+            box-shadow: 0 3px 10px gray;
+        }
+   
+        nav a {           
+            margin: 0 15px;
+            text-decoration: none;
+            color: darkblue;
+            font-weight: bold;
+            font-size: 17px;
+            padding: 8px 12px;
+            border-radius: 5px;
+            
+        }
+
+        .container {
+            background-color: white;
+            max-width: 900px;
+            width: 80%;
+            margin: auto;
+            padding: 20px;
+            border-radius: 15px;
+            box-shadow: 0 4px 15px gray;
+        }
+
+        ul {
+            width: 200px;
+            margin: 10px auto;
+            font-size: 18px;
+        }
+
+        li {
+            margin: 8px 0;
+        } 
+
+        ul {
+            background-color: lightgray;
+            width: 200px;
+            padding: 20px 40px;
+            margin: 20px auto;
+            border-radius: 10px;
+        }
+
+        li {
+            margin: 8px 0;
+            color: darkblue;
+        }  
+        footer {
+            text-align: center;
+            margin-top: 30px;
+            padding: 15px;
+            background-color: darkblue;
+            color: white;
+            font-size: 16px;
+            border-radius: 10px;
+        }
+
+        .email {
+            text-align: center;
+            font-size: 17px;
+            font-style: normal;
+        }
+        .goal-text {
+            text-align: center;
+            font-size: 18px;
+        }
+
+    @media (max-width: 600px) {
+        nav a {
+            display: block;
+            margin: 8px 0;
+        }
+
+        .container {
+            width: 90%;
+            padding: 15px;
+        }
+
+        img {
+            width: 90%
+        }
+}
+        form {
+             text-align: center;
+             margin-top: 20px;
+        }
+ 
+        input,
+        textarea {
+            width: 80%;
+            max-width: 400px;
+            padding: 10px;
+            margin: 5px auto 0;
+            display: block;
+            border: 1px solid gray;
+            border-radius: 5px;
+            font-size: 16px;
+            
+            
+        }
+        label {
+            font-weight: bold;
+            color: darkblue;
+        }
+    
+        input:focus,
+        textarea:focus {
+            outline: none;
+            border: 2px solid darkblue;
+        }
+
+        textarea {
+            resize: none;
+        }
+
+        .send-btn {
+            margin-top: 10px;
+        }
+
+        .send-btn {
+            background-color: darkblue;
+            color: white;
+            padding:10px 20px;
+            border: none;
+            border-radius: 5px;
+            font-size: 16px;
+       }
+
+       .form-group label {
+            display: block;
+            margin-bottom: 5px;
+       }
+
+       .form-group label {
+           margin-bottom: 15px;
+       }
+       
+
+       form {
+           margin-bottom: 20px;
+       }
+
+       .email a:hover {
+           color: green;
+       }
+         
+    </style>  
+</head>
+
+<body id="top">
+
+<nav>
+    <a href="#home">Home</a>
+    <a href="#about">About</a>
+    <a href="#goal">Goal</a>
+    <a href="#skills">Skills</a>
+    <a href="#contact">contact</a>
+</nav>
+
+<div class="container">
+
+<h1 id="home">My Name</h1>
+
+<div class="gallery">
+    <img src="image.jpg" alt="Picture 1">
+    <img src="photo.jpg" alt="Picture 2">
+    <img src="picture.jpg" alt="Picture 3">
+</div>
+
+<p>Welcome to my personal website. I am building my first website.</p>
+
+<h2 id="about">About Me</h2>
+
+<p>I am learning Web Development. I am interested in creating websites and improving
+ my computer skills.</p>
+
+<p>I enjoy learning new things and creating simple websites.</p>
+
+<h2 id="goal">My Goal</h2>
+
+<p class="goal-text">I want to become a Web Developer.</p>
+
+<p class="goal-text">My goal is to build professional and useful websites.</p>
+
+<h2 id="skills">My Skills</h2>
+
+<ul>
+    <li>HTML</li>
+    <li>CSS</li>
+    <li>JAVAScript</li>
+    <li>Responsive Web Design</li>
+    <li>MS Excel</li>
+    <li>Data Entry</li>
+    <li>Git & GitHub</li>
+</ul>
+
+<div class="button-box">
+<button
+    onclick="location.href='#contact'">Contact Me
+</button>
+</div>
+
+<h2 id="contact">Contact Me</h2>
+
+<p> Feel free to contact me for any questions or projects.</p>
+
+<p class="email">
+    Email:
+    <a
+ href="mailto:salman.seo1611@gmail.com">salman.seo1611@gmail.com</a>
+</p>
+
+<form 
+action="https://formspree.io/f/mqpzjnly" method="POST">
+<input type="hidden" name="_next" value="https://example.com/thank-you.html">
+<div class="form-group">
+     <label>Name:</label>
+     <input type="text" name="name" placeholder="Enter your name" required>
+</div>
+
+<div class="form-group">
+     <label>Email:</label>
+     <input type="email" name="email" placeholder="Enter your email" required>
+</div>
+
+<div class="form-group">
+     <label>phone:</label>
+     <input type="tel" name="phone" placeholder="Enter your phone number"required>
+</div>
+
+<div class="form-group">
+     <label>Message:</label>
+     <br>
+     <textarea name="message" rows="5"cols="30" placeholder="Write your message"required></textarea>
+</div>
+
+     <button class="send-btn" type="submit">Send Message</button>
+     </form>
+     
+</div>
+
+<footer>
+    <p>© 2026 My First Website. All Rights Reserved.</p>
+</footer>
+
+</body>
+
+</html>

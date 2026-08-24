@@ -63,7 +63,7 @@
         button {
             background-color: darkblue;
             color: white;
-            padding: 10px 20px;
+            padding: 12px 20px;
             border: none;
             border-radius: 5px;
             cursor: pointer;
@@ -273,6 +273,7 @@ nav a {
 
 nav a:hover {
     color: yellow;
+    text-decoration: underline;
 }
 
 .skills {
@@ -289,6 +290,7 @@ nav a:hover {
     box-shadow: 0 4px 10px gray;
     width: 180px;
     text-align: center;
+    transition: 0.3s;
 }
 
 .skill:hover {
@@ -311,11 +313,6 @@ nav a:hover {
     max-width: 700px;
 }
 
-.about-box:hover {
-    transform: translateY(-5px);
-    box-shadow: 0 8px 15px gray;
-} 
-
  .goal-box {
     background-color: white;
     padding: 25px;
@@ -325,10 +322,26 @@ nav a:hover {
     max-width: 700px;
 }
 
-.goal-box:hover {
+.contact-box {
+    background-color: white;
+    padding: 25px;
+    margin: 20px auto;
+    border-radius: 15px;
+    box-shadow: 0 4px 10px gray;
+    max-width: 700px;
+}
+
+.about-box:hover,
+.goal-box:hover,
+.contact-box:hover {
     transform: translateY(-5px);
     box-shadow: 0 8px 15px gray;
 }
+
+html {
+    scroll-behavior: smooth;
+}
+
     </style>  
 </head>
 
@@ -380,14 +393,15 @@ nav a:hover {
 
 <div class="goal-box">
 
-    <h2>My Goal</h2>
+    <h2 id="goal">My Goal</h2>
 
     <p>I want to become a Web Developer.</p>
 
 <p class="goal-text">My goal is to build professional and useful websites.</p>
 </div>
 
-<h2>My Skills</h2>
+
+<h2 id="skills">My Skills</h2>
 
 <div class="skills">
 
@@ -420,14 +434,17 @@ nav a:hover {
     </div>
 
 </div>
-
 <div class="button-box">
 <button
     onclick="location.href='#contact'">Contact Me
 </button>
 </div>
 
-<h2 id="contact">Contact Me</h2>
+<div class="contact-box">
+
+    <h2 id="contact">Contact</h2>
+
+    <p>You can contact me through my website.</p>
 
 <p> Feel free to contact me for any questions or projects.</p>
 
@@ -436,7 +453,7 @@ nav a:hover {
     <a
  href="mailto:salman.seo1611@gmail.com">salman.seo1611@gmail.com</a>
 </p>
-
+</div>
 <form id="contact-form"
 action="https://formspree.io/f/mqpzjnly" method="POST">
 <input type="hidden" name="_next" value="https://salmanseo1611-star.github.io/my-website/thank-you.html">

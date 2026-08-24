@@ -256,7 +256,79 @@
       
 .hero button {
     margin: 10px 5px;
-}   
+}
+
+nav {
+    background-color: darkblue;
+    padding: 15px;
+    text-align: center;
+}
+
+nav a {
+    color: white;
+    text-decoration: none;
+    margin: 15px;
+    font-size: 18px;
+}
+
+nav a:hover {
+    color: yellow;
+}
+
+.skills {
+    display: flex;
+    justify-content: center;
+    gap: 20px;
+    flex-wrap: wrap;
+}
+
+.skill {
+    background-color: white;
+    padding: 20px;
+    border-radius: 15px;
+    box-shadow: 0 4px 10px gray;
+    width: 180px;
+    text-align: center;
+}
+
+.skill:hover {
+    transform: translateY(-8px);
+    box-shadow: 0 8px 15px gray;
+}
+
+@media (max-width: 600px) {
+    .skill {
+        width: 90%;
+    }
+} 
+
+.about-box {
+    background-color: white;
+    padding: 25px;
+    margin: 20px auto;
+    border-radius: 15px;
+    box-shadow: 0 4px 10px gray;
+    max-width: 700px;
+}
+
+.about-box:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 8px 15px gray;
+} 
+
+ .goal-box {
+    background-color: white;
+    padding: 25px;
+    margin: 20px auto;
+    border-radius: 15px;
+    box-shadow: 0 4px 10px gray;
+    max-width: 700px;
+}
+
+.goal-box:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 8px 15px gray;
+}
     </style>  
 </head>
 
@@ -294,30 +366,60 @@
 
 <p>Welcome to my personal website. I am building my first website.</p>
 
-<h2 id="about">About Me</h2>
+<div class="about-box">
 
-<p>I am learning Web Development. I am interested in creating websites and improving
- my computer skills.</p>
+    <h2 id="about">About Me</h2>
+
+    <p>
+        I am learning Web Development. I am interested in creating websites
+        and improving my computer skills.
+    </p>
 
 <p>I enjoy learning new things and creating simple websites.</p>
+</div>
 
-<h2 id="goal">My Goal</h2>
+<div class="goal-box">
 
-<p class="goal-text">I want to become a Web Developer.</p>
+    <h2>My Goal</h2>
+
+    <p>I want to become a Web Developer.</p>
 
 <p class="goal-text">My goal is to build professional and useful websites.</p>
+</div>
 
-<h2 id="skills">My Skills</h2>
+<h2>My Skills</h2>
 
-<ul>
-    <li>HTML</li>
-    <li>CSS</li>
-    <li>JAVAScript</li>
-    <li>Responsive Web Design</li>
-    <li>MS Excel</li>
-    <li>Data Entry</li>
-    <li>Git & GitHub</li>
-</ul>
+<div class="skills">
+
+    <div class="skill">
+        <h3>HTML</h3>
+    </div>
+
+    <div class="skill">
+        <h3>CSS</h3>
+    </div>
+
+    <div class="skill">
+        <h3>JavaScript</h3>
+    </div>
+
+    <div class="skill">
+        <h3>Responsive Web Design</h3>
+    </div>
+
+    <div class="skill">
+        <h3>MS Excel</h3>
+    </div>
+
+    <div class="skill">
+        <h3>Data Entry</h3>
+    </div>
+
+    <div class="skill">
+        <h3>Git & GitHub</h3>
+    </div>
+
+</div>
 
 <div class="button-box">
 <button

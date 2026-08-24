@@ -238,7 +238,25 @@
        .email a:hover {
            color: green;
        }
-         
+
+       .hero {
+    text-align: center;
+    padding: 30px 20px;
+    margin-bottom: 20px;
+}
+
+.hero h1 {
+    font-size: 40px;
+    margin-bottom: 10px;
+}
+
+.hero p {
+    font-size: 20px;
+}
+      
+.hero button {
+    margin: 10px 5px;
+}   
     </style>  
 </head>
 
@@ -254,7 +272,19 @@
 
 <div class="container">
 
-<h1 id="home">My Name</h1>
+<div class="hero">
+    <h1 id="home">Hello, I'm Muhammad Salman</h1>
+
+    <p>Web Development Learner & Aspiring Web Developer</p>
+
+    <button onclick="location.href='#contact'">
+        Contact Me
+    </button>
+    
+    <button onclick="location.href='#skills'">
+        My Skills
+    </button>
+</div>
 
 <div class="gallery">
     <img src="image.jpg" alt="Picture 1">
@@ -331,15 +361,17 @@ action="https://formspree.io/f/mqpzjnly" method="POST">
 
      <button class="send-btn" type="submit">Send Message</button>
      </form>
-    <p id="success-message" style="display:none;">
+<p id="success-message"
+style="display:none;">
     Thank You! Your message has been sent successfully.
 </p>
-     
+
 </div>
 
 <footer>
     <p>© 2026 My First Website. All Rights Reserved.</p>
 </footer>
+
 <script>
 const form = document.getElementById("contact-form");
 const successMessage = document.getElementById("success-message");
@@ -364,8 +396,8 @@ form.addEventListener("submit", async function(event) {
         alert("Something went wrong. Please try again.");
     }
 });
-</script>
-    
+</script>     
+
 </body>
 
 </html>

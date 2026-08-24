@@ -305,7 +305,7 @@
  href="mailto:salman.seo1611@gmail.com">salman.seo1611@gmail.com</a>
 </p>
 
-<form 
+<form id="contact-form"
 action="https://formspree.io/f/mqpzjnly" method="POST">
 <input type="hidden" name="_next" value="https://salmanseo1611-star.github.io/my-website/thank-you.html">
 <div class="form-group">
@@ -331,13 +331,41 @@ action="https://formspree.io/f/mqpzjnly" method="POST">
 
      <button class="send-btn" type="submit">Send Message</button>
      </form>
+    <p id="success-message" style="display:none;">
+    Thank You! Your message has been sent successfully.
+</p>
      
 </div>
 
 <footer>
     <p>© 2026 My First Website. All Rights Reserved.</p>
 </footer>
+<script>
+const form = document.getElementById("contact-form");
+const successMessage = document.getElementById("success-message");
 
+form.addEventListener("submit", async function(event) {
+    event.preventDefault();
+
+    const formData = new FormData(form);
+
+    const response = await fetch(form.action, {
+        method: "POST",
+        body: formData,
+        headers: {
+            "Accept": "application/json"
+        }
+    });
+
+    if (response.ok) {
+        form.reset();
+        successMessage.style.display = "block";
+    } else {
+        alert("Something went wrong. Please try again.");
+    }
+});
+</script>
+    
 </body>
 
 </html>

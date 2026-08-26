@@ -244,29 +244,37 @@
            color: green;
        }
 
-       .hero {
+.hero {
     text-align: center;
-    padding: 30px 20px;
-    margin-bottom: 20px;
+    padding: 50px 20px;
+    margin-bottom: 30px;
+    background-color: white;
+    border-radius: 20px;
+    box-shadow: 0 4px 15px gray;
 }
-
 .hero h1 {
-    font-size: 40px;
+    font-size: 42px;
     margin-bottom: 10px;
+    letter-spacing: 1px;
 }
-
 .hero p {
     font-size: 20px;
+    color: darkblue;
+    margin-bottom: 20px;
 }
-      
 .hero button {
     margin: 10px 5px;
+    min-width: 140px;
+    font-weight: bold;
 }
 
 nav {
     background-color: darkblue;
     padding: 15px;
     text-align: center;
+    position: sticky;
+    top: 0;
+    z-index: 1000;
 }
 
 nav a {
@@ -348,6 +356,66 @@ html {
     scroll-behavior: smooth;
 }
 
+.gallery-item {
+    background-color: white;
+    padding: 15px;
+    border-radius: 15px;
+    text-align: center;
+    box-shadow: 0 4px 10px gray;
+    transition: 0.3s;
+}
+
+.gallery-item:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 8px 15px gray;
+}
+
+.gallery-item h3 {
+    color: darkblue;
+    margin: 10px 0 5px;
+}
+
+.gallery-item p {
+    font-size: 15px;
+    margin: 0;
+}
+
+.gallery-item h3 {
+    font-size: 20px;
+    margin: 12px 0 6px;
+}
+
+.gallery-item p {
+    font-size: 14px;
+    color: gray;
+    line-height: 1.5;
+}
+
+@media (max-width: 600px) {
+
+    .gallery {
+        grid-template-columns: 1fr;
+        gap: 15px;
+    }
+
+    .gallery-item img {
+        height: 220px;
+    }
+
+}
+
+.gallery-item {
+    min-height: 330px;
+    box-sizing: border-box;
+}
+
+.gallery,
+.about-box,
+.goal-box,
+.skills,
+.contact-box {
+    margin-bottom: 40px;
+}
     </style>  
 </head>
 
@@ -377,24 +445,97 @@ html {
     </button>
 </div>
 
+<h2 id="gallery">My Projects & Work</h2>
+
 <div class="gallery">
 
-    <img src="image.jpg" alt="Picture 1">
-    <img src="photo.jpg" alt="Picture 2">
-    <img src="picture.jpg" alt="Picture 3">
+<div class="gallery-item">
+    <img src="image.jpg" alt="Web Development">
+    <h3>Web Development</h3>
+    <p>Building modern and responsive websites.</p>
+</div>
 
-    <img src="image4.jpg" alt="Picture 4">
-    <img src="image5.jpg" alt="Picture 5">
-    <img src="image6.jpg" alt="Picture 6">
-    <img src="image7.jpg" alt="Picture 7">
-    <img src="image8.jpg" alt="Picture 8">
-    <img src="image9.jpg" alt="Picture 9">
-    <img src="image10.jpg" alt="Picture 10">
-    <img src="image11.jpg" alt="Picture 11">
-    <img src="image12.jpg" alt="Picture 12">
-    <img src="image13.jpg" alt="Picture 13">
-    <img src="image14.jpg" alt="Picture 14">
-    <img src="image15.jpg" alt="Picture 15">
+    <div class="gallery-item">
+    <img src="photo.jpg" alt="Coding">
+    <h3>Coding</h3>
+    <p>Writing clean and effective code.</p>
+</div>
+
+    <div class="gallery-item">
+    <img src="picture.jpg" alt="Network Connectivity">
+    <h3>Network Connectivity</h3>
+    <p>Connecting multiple points through a network.</p>
+</div>
+    <div class="gallery-item">
+    <img src="image4.jpg" alt="Web Design">
+    <h3>Web Design</h3>
+    <p>Creating clean and modern web designs.</p>
+</div>
+
+    <div class="gallery-item">
+    <img src="image5.jpg" alt="Web Design">
+    <h3>Web Design</h3>
+    <p>Designing attractive and user-friendly websites.</p>
+</div>
+
+<div class="gallery-item">
+    <img src="image6.jpg" alt="Coding Language">
+    <h3>Coding</h3>
+    <p>Learning and using programming languages.</p>
+</div>
+<div class="gallery-item">
+    <img src="image7.jpg" alt="Web Development">
+    <h3>Web Development</h3>
+    <p>Developing modern and functional websites.</p>
+</div>
+
+<div class="gallery-item">
+    <img src="image8.jpg" alt="Web Development">
+    <h3>Web Development</h3>
+    <p>Creating responsive and user-friendly websites.</p>
+</div>
+    
+<div class="gallery-item">
+    <img src="image9.jpg" alt="Computer Technology">
+    <h3>Computer Technology</h3>
+    <p>Exploring modern computer technology.</p>
+</div>
+    
+<div class="gallery-item">
+    <img src="image10.jpg" alt="Programming">
+    <h3>Programming</h3>
+    <p>Learning programming and coding skills.</p>
+</div>
+
+<div class="gallery-item">
+    <img src="image11.jpg" alt="Web Design">
+    <h3>Web Design</h3>
+    <p>Designing modern and creative websites.</p>
+</div>
+
+<div class="gallery-item">
+    <img src="image12.jpg" alt="Programming Language">
+    <h3>Programming Language</h3>
+    <p>Exploring programming languages and concepts.</p>
+</div>
+   
+<div class="gallery-item">
+    <img src="image13.jpg" alt="HTML">
+    <h3>HTML</h3>
+    <p>Building the structure of modern websites.</p>
+</div>
+
+<div class="gallery-item">
+    <img src="image14.jpg" alt="CSS">
+    <h3>CSS</h3>
+    <p>Designing beautiful and responsive web pages.</p>
+</div>
+
+<div class="gallery-item">
+    <img src="image15.jpg" alt="JavaScript">
+    <h3>JavaScript</h3>
+    <p>Adding interactive features to websites.</p>
+</div>
 
 </div>
 

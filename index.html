@@ -1,786 +1,675 @@
-<!DOCTYPE html>
-<html lang="en">
-
-<head>
-
-    <meta charset="UTF-8">
-
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-
-    <meta name="description"
-        content="Muhammad Salman - Web Development Learner and Aspiring Web Developer. Explore my skills, services and projects.">
-
-    <meta name="keywords"
-        content="Muhammad Salman, Web Developer, HTML, CSS, JavaScript, Web Design, SEO">
-
-    <meta name="author" content="Muhammad Salman">
-
-    <title>Muhammad Salman | Web Developer</title>
-
-
-    <style>
-
-        * {
-            box-sizing: border-box;
-            margin: 0;
-            padding: 0;
-        }
-
-        html {
-            scroll-behavior: smooth;
-        }
-
-        body {
-            font-family: Arial, sans-serif;
-            background: lightblue;
-            color: #222;
-            transition: 0.3s;
-        }
-
-
-        /* =========================
-           DARK MODE
-        ========================= */
-
-        body.dark {
-            background: #121212;
-            color: white;
-        }
-
-        body.dark .container,
-        body.dark .hero,
-        body.dark .about-box,
-        body.dark .goal-box,
-        body.dark .contact-box,
-        body.dark .service,
-        body.dark .project,
-        body.dark .stat,
-        body.dark .technology,
-        body.dark .skill,
-        body.dark #contact-form,
-        body.dark .gallery-item {
-            background: #1f1f1f;
-            color: white;
-        }
-
-        body.dark p {
-            color: #ddd;
-        }
-
-        body.dark h2,
-        body.dark h3 {
-            color: #66ff99;
-        }
-
-
-        /* =========================
-           NAVIGATION
-        ========================= */
-
-        nav {
-            background: darkblue;
-            padding: 15px;
-            text-align: center;
-            position: sticky;
-            top: 0;
-            z-index: 1000;
-        }
-
-        nav a {
-            color: white;
-            text-decoration: none;
-            margin: 12px;
-            font-size: 17px;
-        }
-
-        nav a:hover {
-            color: yellow;
-        }
-
-        #themeBtn {
-            background: white;
-            color: darkblue;
-            padding: 8px 12px;
-            margin-left: 10px;
-            box-shadow: none;
-        }
-
-
-        /* MOBILE MENU */
-
-        #menuBtn {
-            display: none;
-        }
-
-
-        /* =========================
-           CONTAINER
-        ========================= */
-
-        .container {
-            background: white;
-            width: 100%;
-            padding: 30px;
-        }
-
-
-        /* =========================
-           HERO
-        ========================= */
-
-        .hero {
-            text-align: center;
-            padding: 60px 20px;
-            margin-bottom: 45px;
-            background: white;
-            border-radius: 20px;
-            box-shadow: 0 4px 15px gray;
-            animation: fadeIn 1s ease;
-        }
-
-        .hero h1 {
-            color: darkblue;
-            font-size: 42px;
-            margin-bottom: 15px;
-        }
-
-        .hero p {
-            font-size: 20px;
-            color: #555;
-            margin-bottom: 25px;
-        }
-
-
-        /* =========================
-           BUTTONS
-        ========================= */
-
-        button,
-        .btn {
-            display: inline-block;
-            background: darkblue;
-            color: white;
-            padding: 12px 20px;
-            border: none;
-            border-radius: 7px;
-            cursor: pointer;
-            text-decoration: none;
-            font-size: 16px;
-            margin: 7px;
-            transition: 0.3s;
-            box-shadow: 0 4px 8px gray;
-        }
-
-        button:hover,
-        .btn:hover {
-            background: green;
-            transform: translateY(-3px);
-        }
-
-
-        /* =========================
-           GENERAL
-        ========================= */
-
-        section {
-            scroll-margin-top: 80px;
-            margin-bottom: 70px;
-        }
-
-        h2 {
-            text-align: center;
-            color: green;
-            font-size: 30px;
-            margin-bottom: 30px;
-        }
-
-        p {
-            line-height: 1.6;
-        }
-
-
-        /* =========================
-           STATS
-        ========================= */
-
-        .stats {
-            display: flex;
-            justify-content: center;
-            gap: 20px;
-            flex-wrap: wrap;
-            max-width: 1000px;
-            margin: auto;
-        }
-
-        .stat {
-            background: white;
-            width: 210px;
-            padding: 25px;
-            text-align: center;
-            border-radius: 15px;
-            box-shadow: 0 4px 10px gray;
-            transition: 0.3s;
-        }
-
-        .stat:hover {
-            transform: translateY(-7px);
-        }
-
-        .stat h3 {
-            font-size: 32px;
-            color: darkblue;
-        }
-
-        .stat p {
-            font-size: 16px;
-        }
-
-
-        /* =========================
-           SERVICES
-        ========================= */
-
-        .services {
-            display: grid;
-            grid-template-columns: repeat(3, 1fr);
-            gap: 20px;
-            max-width: 1100px;
-            margin: auto;
-        }
-
-        .service {
-            background: white;
-            padding: 30px 20px;
-            border-radius: 15px;
-            text-align: center;
-            box-shadow: 0 4px 10px gray;
-            transition: 0.3s;
-        }
-
-        .service:hover {
-            transform: translateY(-8px);
-        }
-
-        .service .icon {
-            font-size: 45px;
-            margin-bottom: 15px;
-        }
-
-        .service h3 {
-            color: darkblue;
-            margin-bottom: 10px;
-        }
-
-
-        /* =========================
-           SKILLS
-        ========================= */
-
-        .skills {
-            max-width: 900px;
-            margin: auto;
-        }
-
-        .skill-bar {
-            margin-bottom: 22px;
-        }
-
-        .skill-name {
-            display: flex;
-            justify-content: space-between;
-            margin-bottom: 7px;
-            font-weight: bold;
-        }
-
-        .progress {
-            width: 100%;
-            height: 18px;
-            background: #ddd;
-            border-radius: 20px;
-            overflow: hidden;
-        }
-
-        .progress div {
-            height: 100%;
-            background: darkblue;
-            border-radius: 20px;
-            animation: progressAnimation 1.5s ease;
-        }
-
-
-        /* =========================
-           TECHNOLOGIES
-        ========================= */
-
-        .technologies {
-            display: flex;
-            justify-content: center;
-            gap: 15px;
-            flex-wrap: wrap;
-            max-width: 1000px;
-            margin: auto;
-        }
-
-        .technology {
-            background: white;
-            padding: 15px 25px;
-            border-radius: 10px;
-            box-shadow: 0 4px 8px gray;
-            font-weight: bold;
-            transition: 0.3s;
-        }
-
-        .technology:hover {
-            transform: scale(1.05);
-        }
-
-
-        /* =========================
-           GALLERY
-        ========================= */
-
-        .gallery {
-            display: grid;
-            grid-template-columns: repeat(4, 1fr);
-            grid-auto-flow: dense;
-            gap: 20px;
-            max-width: 1100px;
-            margin: auto;
-        }
-
-        .gallery-item {
-            background: white;
-            border-radius: 15px;
-            overflow: hidden;
-            text-align: center;
-            box-shadow: 0 4px 10px gray;
-            transition: 0.3s;
-            display: flex;
-            flex-direction: column;
-        }
-
-        .gallery-item:hover {
-            transform: translateY(-5px);
-        }
-
-        .gallery-item img {
-            width: 100%;
-            height: 220px;
-            object-fit: cover;
-            display: block;
-        }
-
-        .gallery-item h3 {
-            color: darkblue;
-            margin: 12px 10px 6px;
-        }
-
-        .gallery-item p {
-            font-size: 14px;
-            color: gray;
-            margin: 0 12px 15px;
-        }
-
-
-        /* BIG / TALL IMAGES */
-
-        .gallery-item:nth-child(1) {
-            grid-column: span 2;
-            grid-row: span 2;
-        }
-
-        .gallery-item:nth-child(1) img {
-            height: 320px;
-        }
-
-        .gallery-item:nth-child(3) {
-            grid-row: span 2;
-        }
-
-        .gallery-item:nth-child(3) img {
-            height: 320px;
-        }
-
-        .gallery-item:nth-child(6) {
-            grid-column: span 2;
-        }
-
-        .gallery-item:nth-child(6) img {
-            height: 260px;
-        }
-
-        .gallery-item:nth-child(8) {
-            grid-row: span 2;
-        }
-
-        .gallery-item:nth-child(8) img {
-            height: 320px;
-        }
-
-        .gallery-item:nth-child(11) {
-            grid-column: span 2;
-        }
-
-        .gallery-item:nth-child(11) img {
-            height: 260px;
-        }
-
-        .gallery-item:nth-child(14) {
-            grid-column: span 2;
-        }
-
-        .gallery-item:nth-child(14) img {
-            height: 260px;
-        }
-
-        .gallery-item:nth-child(15) {
-            grid-row: span 2;
-        }
-
-        .gallery-item:nth-child(15) img {
-            height: 320px;
-        }
-
-
-        /* =========================
-           PROJECTS
-        ========================= */
-
-        .projects {
-            display: grid;
-            grid-template-columns: repeat(3, 1fr);
-            gap: 25px;
-            max-width: 1100px;
-            margin: auto;
-        }
-
-        .project {
-            background: white;
-            border-radius: 15px;
-            padding: 20px;
-            box-shadow: 0 4px 10px gray;
-            transition: 0.3s;
-        }
-
-        .project:hover {
-            transform: translateY(-7px);
-        }
-
-        .project h3 {
-            color: darkblue;
-            margin-bottom: 10px;
-        }
-
-        .project p {
-            color: #555;
-            margin-bottom: 15px;
-        }
-
-
-        /* =========================
-           ABOUT / GOAL
-        ========================= */
-
-        .about-box,
-        .goal-box,
-        .contact-box {
-            background: white;
-            padding: 30px;
-            margin: 30px auto;
-            border-radius: 15px;
-            box-shadow: 0 4px 10px gray;
-            max-width: 750px;
-            text-align: center;
-        }
-
-
-        /* =========================
-           SOCIAL MEDIA
-        ========================= */
-
-        .social {
-            text-align: center;
-            margin: 30px auto;
-        }
-
-        .social a {
-            display: inline-block;
-            background: darkblue;
-            color: white;
-            padding: 12px 18px;
-            margin: 6px;
-            border-radius: 8px;
-            text-decoration: none;
-            transition: 0.3s;
-        }
-
-        .social a:hover {
-            background: green;
-            transform: translateY(-3px);
-        }
-
-
-        /* =========================
-           CV
-        ========================= */
-
-        .cv-section {
-            text-align: center;
-            padding: 20px;
-        }
-
-
-        /* =========================
-           CONTACT FORM
-        ========================= */
-
-        #contact-form {
-            background: white;
-            padding: 30px;
-            border-radius: 15px;
-            box-shadow: 0 4px 15px gray;
-            max-width: 600px;
-            margin: 30px auto;
-        }
-
-        .form-group {
-            margin-bottom: 15px;
-        }
-
-        label {
-            display: block;
-            text-align: center;
-            font-weight: bold;
-            color: darkblue;
-            margin-bottom: 6px;
-        }
-
-        input,
-        textarea {
-            width: 90%;
-            max-width: 450px;
-            padding: 12px;
-            margin: auto;
-            display: block;
-            border: 1px solid gray;
-            border-radius: 7px;
-            font-size: 16px;
-        }
-
-        input:focus,
-        textarea:focus {
-            outline: none;
-            border: 2px solid darkblue;
-        }
-
-        textarea {
-            resize: none;
-        }
-
-        .send-btn {
-            display: block;
-            margin: 15px auto;
-        }
-
-        #success-message {
-            display: none;
-            text-align: center;
-            color: green;
-            font-weight: bold;
-            font-size: 18px;
-        }
-
-
-        /* =========================
-           BACK TO TOP
-        ========================= */
-
-        #topBtn {
-            display: none;
-            position: fixed;
-            bottom: 25px;
-            right: 25px;
-            width: 50px;
-            height: 50px;
-            border-radius: 50%;
-            padding: 0;
-            font-size: 22px;
-            z-index: 999;
-        }
-
-
-        /* =========================
-           FOOTER
-        ========================= */
-
-        footer {
-            background: darkblue;
-            color: white;
-            text-align: center;
-            padding: 35px 20px;
-        }
-
-        footer a {
-            color: white;
-            text-decoration: none;
-            margin: 8px;
-        }
-
-
-        /* =========================
-           ANIMATIONS
-        ========================= */
-
-        @keyframes fadeIn {
-
-            from {
-                opacity: 0;
-                transform: translateY(20px);
-            }
-
-            to {
-                opacity: 1;
-                transform: translateY(0);
-            }
-
-        }
-
-        @keyframes progressAnimation {
-
-            from {
-                width: 0;
-            }
-
-        }
-
-
-        /* =========================
-           TABLET
-        ========================= */
-
-        @media (max-width: 900px) {
-
-            .services {
-                grid-template-columns: repeat(2, 1fr);
-            }
-
-            .projects {
-                grid-template-columns: repeat(2, 1fr);
-            }
-
-            .gallery {
-                grid-template-columns: repeat(2, 1fr);
-            }
-
-        }
-
-
-        /* =========================
-           MOBILE
-        ========================= */
-
-        @media (max-width: 600px) {
-
-            nav {
-                padding: 10px;
-            }
-
-            nav a {
-                display: block;
-                margin: 8px;
-            }
-
-            #themeBtn {
-                margin-top: 8px;
-            }
-
-            .container {
-                padding: 15px;
-            }
-
-            .hero {
-                padding: 35px 15px;
-            }
-
-            .hero h1 {
-                font-size: 30px;
-            }
-
-            .hero p {
-                font-size: 17px;
-            }
-
-            .services,
-            .projects {
-                grid-template-columns: 1fr;
-            }
-
-            .gallery {
-                grid-template-columns: 1fr;
-            }
-
-            .gallery-item:nth-child(1),
-            .gallery-item:nth-child(6),
-            .gallery-item:nth-child(11),
-            .gallery-item:nth-child(14) {
-                grid-column: span 1;
-            }
-
-            .gallery-item:nth-child(3),
-            .gallery-item:nth-child(8),
-            .gallery-item:nth-child(15) {
-                grid-row: span 1;
-            }
-
-            .gallery-item img,
-            .gallery-item:nth-child(1) img,
-            .gallery-item:nth-child(3) img,
-            .gallery-item:nth-child(6) img,
-            .gallery-item:nth-child(8) img,
-            .gallery-item:nth-child(11) img,
-            .gallery-item:nth-child(14) img,
-            .gallery-item:nth-child(15) img {
-                height: 220px;
-            }
-
-            input,
-            textarea {
-                width: 95%;
-            }
-
-        }
-
-    </style>
-
-</head>
-
-
+<style>
+
+* {
+    box-sizing: border-box;
+}
+
+html {
+    scroll-behavior: smooth;
+}
+
+body {
+    margin: 0;
+    padding: 0;
+    font-family: Arial, sans-serif;
+    background: linear-gradient(135deg, #dff6ff, #eef7ff);
+    color: #222;
+    transition: 0.4s;
+}
+
+/* DARK MODE */
+
+body.dark-mode {
+    background: #111827;
+    color: white;
+}
+
+body.dark-mode .container,
+body.dark-mode .hero,
+body.dark-mode .gallery-item,
+body.dark-mode .about-box,
+body.dark-mode .goal-box,
+body.dark-mode .contact-box,
+body.dark-mode .service,
+body.dark-mode .project,
+body.dark-mode .skill {
+    background: #1f2937;
+    color: white;
+}
+
+body.dark-mode p {
+    color: #ddd;
+}
+
+body.dark-mode h2,
+body.dark-mode h3 {
+    color: #60a5fa;
+}
+
+/* NAVIGATION */
+
+nav {
+    background: linear-gradient(90deg, darkblue, #2563eb);
+    padding: 16px;
+    text-align: center;
+    position: sticky;
+    top: 0;
+    z-index: 1000;
+    box-shadow: 0 3px 12px #555;
+}
+
+nav a {
+    color: white;
+    text-decoration: none;
+    margin: 0 12px;
+    font-size: 17px;
+    font-weight: bold;
+    transition: 0.3s;
+}
+
+nav a:hover {
+    color: yellow;
+}
+
+/* CONTAINER */
+
+.container {
+    width: 100%;
+    max-width: 1200px;
+    margin: auto;
+    padding: 30px;
+    background: white;
+}
+
+/* HERO */
+
+.hero {
+    text-align: center;
+    padding: 70px 20px;
+    margin-bottom: 50px;
+    border-radius: 25px;
+    background: linear-gradient(135deg, #ffffff, #eaf5ff);
+    box-shadow: 0 8px 25px #aaa;
+}
+
+.hero h1 {
+    color: darkblue;
+    font-size: 42px;
+    margin-bottom: 15px;
+}
+
+.hero p {
+    font-size: 20px;
+    color: #555;
+}
+
+/* BUTTONS */
+
+button {
+    background: linear-gradient(135deg, darkblue, #2563eb);
+    color: white;
+    padding: 12px 22px;
+    border: none;
+    border-radius: 25px;
+    cursor: pointer;
+    font-size: 16px;
+    margin: 8px;
+    transition: 0.3s;
+    box-shadow: 0 5px 12px #aaa;
+}
+
+button:hover {
+    transform: translateY(-3px);
+    background: linear-gradient(135deg, green, #16a34a);
+}
+
+/* HEADINGS */
+
+h2 {
+    color: green;
+    text-align: center;
+    font-size: 32px;
+    margin: 55px 0 30px;
+}
+
+h3 {
+    color: darkblue;
+}
+
+/* GALLERY */
+
+.gallery {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    grid-auto-flow: dense;
+    gap: 20px;
+    max-width: 1100px;
+    margin: auto;
+}
+
+.gallery-item {
+    background: white;
+    border-radius: 18px;
+    overflow: hidden;
+    text-align: center;
+    box-shadow: 0 5px 15px #aaa;
+    transition: 0.3s;
+    display: flex;
+    flex-direction: column;
+}
+
+.gallery-item:hover {
+    transform: translateY(-6px);
+    box-shadow: 0 10px 25px #888;
+}
+
+.gallery-item img {
+    width: 100%;
+    height: 220px;
+    object-fit: cover;
+    display: block;
+    transition: 0.4s;
+}
+
+.gallery-item:hover img {
+    transform: scale(1.05);
+}
+
+.gallery-item h3 {
+    font-size: 20px;
+    margin: 14px 10px 6px;
+}
+
+.gallery-item p {
+    font-size: 14px;
+    line-height: 1.6;
+    color: #666;
+    margin: 0 15px 18px;
+}
+
+/* BIG GALLERY CARDS */
+
+.gallery-item:nth-child(1) {
+    grid-column: span 2;
+    grid-row: span 2;
+}
+
+.gallery-item:nth-child(1) img {
+    height: 320px;
+}
+
+.gallery-item:nth-child(3) {
+    grid-row: span 2;
+}
+
+.gallery-item:nth-child(3) img {
+    height: 320px;
+}
+
+.gallery-item:nth-child(6) {
+    grid-column: span 2;
+}
+
+.gallery-item:nth-child(6) img {
+    height: 260px;
+}
+
+.gallery-item:nth-child(8) {
+    grid-row: span 2;
+}
+
+.gallery-item:nth-child(8) img {
+    height: 320px;
+}
+
+.gallery-item:nth-child(11) {
+    grid-column: span 2;
+}
+
+.gallery-item:nth-child(11) img {
+    height: 260px;
+}
+
+.gallery-item:nth-child(14) {
+    grid-column: span 2;
+}
+
+.gallery-item:nth-child(14) img {
+    height: 260px;
+}
+
+.gallery-item:nth-child(15) {
+    grid-row: span 2;
+}
+
+.gallery-item:nth-child(15) img {
+    height: 320px;
+}
+
+/* ABOUT / GOAL / CONTACT */
+
+.about-box,
+.goal-box,
+.contact-box {
+    max-width: 750px;
+    margin: 40px auto;
+    padding: 30px;
+    background: white;
+    border-radius: 20px;
+    box-shadow: 0 5px 18px #aaa;
+    text-align: center;
+    transition: 0.3s;
+}
+
+.about-box:hover,
+.goal-box:hover,
+.contact-box:hover {
+    transform: translateY(-5px);
+}
+
+.about-box p,
+.goal-box p,
+.contact-box p {
+    font-size: 18px;
+    line-height: 1.7;
+}
+
+/* SERVICES */
+
+.services {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 25px;
+    max-width: 1100px;
+    margin: auto;
+}
+
+.service {
+    background: white;
+    padding: 30px 20px;
+    border-radius: 20px;
+    text-align: center;
+    box-shadow: 0 5px 15px #aaa;
+    transition: 0.3s;
+}
+
+.service:hover {
+    transform: translateY(-8px);
+}
+
+.service-icon {
+    font-size: 45px;
+    margin-bottom: 10px;
+}
+
+.service h3 {
+    font-size: 21px;
+}
+
+.service p {
+    color: #666;
+    line-height: 1.6;
+}
+
+/* SKILLS */
+
+.skills {
+    max-width: 850px;
+    margin: auto;
+}
+
+.skill {
+    background: white;
+    padding: 20px;
+    margin: 20px 0;
+    border-radius: 15px;
+    box-shadow: 0 4px 12px #aaa;
+}
+
+.skill-title {
+    display: flex;
+    justify-content: space-between;
+    font-weight: bold;
+    margin-bottom: 8px;
+}
+
+.progress {
+    width: 100%;
+    height: 15px;
+    background: #ddd;
+    border-radius: 20px;
+    overflow: hidden;
+}
+
+.progress-bar {
+    height: 100%;
+    background: linear-gradient(90deg, darkblue, #2563eb);
+    border-radius: 20px;
+}
+
+/* PROJECTS */
+
+.projects {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 25px;
+    max-width: 1100px;
+    margin: auto;
+}
+
+.project {
+    background: white;
+    border-radius: 20px;
+    overflow: hidden;
+    box-shadow: 0 5px 15px #aaa;
+    transition: 0.3s;
+}
+
+.project:hover {
+    transform: translateY(-7px);
+}
+
+.project img {
+    width: 100%;
+    height: 210px;
+    object-fit: cover;
+}
+
+.project-content {
+    padding: 20px;
+}
+
+.project-content h3 {
+    margin-top: 0;
+}
+
+.project-content p {
+    color: #666;
+    line-height: 1.6;
+}
+
+/* SOCIAL MEDIA */
+
+.social-links {
+    text-align: center;
+    margin: 30px 0;
+}
+
+.social-links a {
+    display: inline-block;
+    text-decoration: none;
+    color: white;
+    background: darkblue;
+    padding: 12px 20px;
+    margin: 7px;
+    border-radius: 25px;
+    transition: 0.3s;
+}
+
+.social-links a:hover {
+    background: green;
+    transform: translateY(-3px);
+}
+
+/* CV */
+
+.cv-section {
+    text-align: center;
+    margin: 50px 0;
+}
+
+.cv-btn {
+    display: inline-block;
+    text-decoration: none;
+    background: darkblue;
+    color: white;
+    padding: 14px 25px;
+    border-radius: 25px;
+    font-weight: bold;
+    box-shadow: 0 5px 12px #aaa;
+}
+
+.cv-btn:hover {
+    background: green;
+}
+
+/* CONTACT FORM */
+
+#contact-form {
+    max-width: 650px;
+    margin: 40px auto;
+    padding: 30px;
+    background: white;
+    border-radius: 20px;
+    box-shadow: 0 5px 18px #aaa;
+}
+
+.form-group {
+    margin-bottom: 18px;
+}
+
+.form-group label {
+    display: block;
+    text-align: center;
+    font-weight: bold;
+    color: darkblue;
+    margin-bottom: 7px;
+}
+
+input,
+textarea {
+    width: 90%;
+    max-width: 500px;
+    padding: 12px;
+    margin: auto;
+    display: block;
+    border: 1px solid #aaa;
+    border-radius: 8px;
+    font-size: 16px;
+}
+
+input:focus,
+textarea:focus {
+    outline: none;
+    border: 2px solid darkblue;
+}
+
+textarea {
+    resize: vertical;
+}
+
+/* SUCCESS MESSAGE */
+
+#success-message {
+    display: none;
+    text-align: center;
+    color: green;
+    font-weight: bold;
+    font-size: 18px;
+}
+
+/* DARK MODE BUTTON */
+
+#darkModeBtn {
+    position: fixed;
+    right: 20px;
+    top: 75px;
+    z-index: 2000;
+    border-radius: 50%;
+    width: 50px;
+    height: 50px;
+    padding: 0;
+    font-size: 22px;
+}
+
+/* BACK TO TOP */
+
+#topBtn {
+    display: none;
+    position: fixed;
+    bottom: 25px;
+    right: 25px;
+    z-index: 2000;
+    width: 55px;
+    height: 55px;
+    border-radius: 50%;
+    padding: 0;
+    font-size: 24px;
+}
+
+/* FOOTER */
+
+footer {
+    background: linear-gradient(90deg, darkblue, #2563eb);
+    color: white;
+    text-align: center;
+    padding: 30px 15px;
+    margin-top: 60px;
+}
+
+footer p {
+    margin: 5px;
+}
+
+/* TABLET */
+
+@media (max-width: 900px) {
+
+    .gallery {
+        grid-template-columns: repeat(2, 1fr);
+    }
+
+    .services {
+        grid-template-columns: repeat(2, 1fr);
+    }
+
+    .projects {
+        grid-template-columns: repeat(2, 1fr);
+    }
+
+}
+
+/* MOBILE */
+
+@media (max-width: 600px) {
+
+    nav {
+        padding: 12px 5px;
+    }
+
+    nav a {
+        display: inline-block;
+        margin: 5px;
+        font-size: 14px;
+    }
+
+    .container {
+        padding: 15px;
+    }
+
+    .hero {
+        padding: 40px 15px;
+    }
+
+    .hero h1 {
+        font-size: 30px;
+    }
+
+    .hero p {
+        font-size: 17px;
+    }
+
+    .gallery {
+        grid-template-columns: 1fr;
+        gap: 15px;
+    }
+
+    .gallery-item:nth-child(1),
+    .gallery-item:nth-child(6),
+    .gallery-item:nth-child(11),
+    .gallery-item:nth-child(14) {
+        grid-column: span 1;
+    }
+
+    .gallery-item:nth-child(3),
+    .gallery-item:nth-child(8),
+    .gallery-item:nth-child(15) {
+        grid-row: span 1;
+    }
+
+    .gallery-item img,
+    .gallery-item:nth-child(1) img,
+    .gallery-item:nth-child(3) img,
+    .gallery-item:nth-child(6) img,
+    .gallery-item:nth-child(8) img,
+    .gallery-item:nth-child(11) img,
+    .gallery-item:nth-child(14) img,
+    .gallery-item:nth-child(15) img {
+        height: 220px;
+    }
+
+    .services {
+        grid-template-columns: 1fr;
+    }
+
+    .projects {
+        grid-template-columns: 1fr;
+    }
+
+    .about-box,
+    .goal-box,
+    .contact-box {
+        padding: 20px;
+    }
+
+    #contact-form {
+        padding: 20px 10px;
+    }
+
+    input,
+    textarea {
+        width: 95%;
+    }
+
+    h2 {
+        font-size: 27px;
+    }
+
+    #darkModeBtn {
+        width: 45px;
+        height: 45px;
+        right: 10px;
+        top: 70px;
+    }
+
+    #topBtn {
+        width: 50px;
+        height: 50px;
+        right: 15px;
+        bottom: 15px;
+    }
+
+}
+
+</style>
 <body id="top">
 
+<!-- DARK MODE BUTTON -->
 
-<!-- =========================
-     NAVIGATION
-========================= -->
+<button id="darkModeBtn" onclick="toggleDarkMode()">🌙</button>
+
+
+<!-- NAVIGATION -->
 
 <nav>
 
     <a href="#home">Home</a>
-
     <a href="#about">About</a>
-
     <a href="#services">Services</a>
-
     <a href="#skills">Skills</a>
-
     <a href="#projects">Projects</a>
-
     <a href="#gallery">Gallery</a>
-
     <a href="#contact">Contact</a>
-
-    <button id="themeBtn" onclick="toggleTheme()">
-        🌙 Dark Mode
-    </button>
 
 </nav>
 
@@ -788,13 +677,11 @@
 <div class="container">
 
 
-<!-- =========================
-     HERO
-========================= -->
+<!-- HERO -->
 
-<section class="hero" id="home">
+<div class="hero">
 
-    <h1>Hello, I'm Muhammad Salman</h1>
+    <h1 id="home">Hello, I'm Muhammad Salman</h1>
 
     <p>
         Web Development Learner & Aspiring Web Developer
@@ -805,910 +692,749 @@
     </button>
 
     <button onclick="location.href='#projects'">
-        View Projects
+        My Projects
     </button>
 
-</section>
+</div>
 
 
-<!-- =========================
-     STATISTICS
-========================= -->
+<!-- ABOUT -->
 
-<section>
+<div class="about-box">
 
-    <h2>My Statistics</h2>
-
-    <div class="stats">
-
-        <div class="stat">
-            <h3>16+</h3>
-            <p>Gallery Works</p>
-        </div>
-
-        <div class="stat">
-            <h3>10+</h3>
-            <p>Skills</p>
-        </div>
-
-        <div class="stat">
-            <h3>5+</h3>
-            <p>Technologies</p>
-        </div>
-
-        <div class="stat">
-            <h3>100%</h3>
-            <p>Learning Passion</p>
-        </div>
-
-    </div>
-
-</section>
-
-
-<!-- =========================
-     SERVICES
-========================= -->
-
-<section id="services">
-
-    <h2>My Services</h2>
-
-    <div class="services">
-
-        <div class="service">
-
-            <div class="icon">🌐</div>
-
-            <h3>Web Development</h3>
-
-            <p>
-                Creating modern and responsive websites using HTML,
-                CSS and JavaScript.
-            </p>
-
-        </div>
-
-
-        <div class="service">
-
-            <div class="icon">🎨</div>
-
-            <h3>Web Design</h3>
-
-            <p>
-                Designing clean, attractive and user-friendly
-                website layouts.
-            </p>
-
-        </div>
-
-
-        <div class="service">
-
-            <div class="icon">📱</div>
-
-            <h3>Responsive Design</h3>
-
-            <p>
-                Creating websites that work properly on mobile,
-                tablet and desktop screens.
-            </p>
-
-        </div>
-
-
-        <div class="service">
-
-            <div class="icon">🔍</div>
-
-            <h3>SEO Basics</h3>
-
-            <p>
-                Applying basic SEO techniques to improve website
-                visibility and structure.
-            </p>
-
-        </div>
-
-
-        <div class="service">
-
-            <div class="icon">📊</div>
-
-            <h3>Website Optimization</h3>
-
-            <p>
-                Improving website structure, performance and
-                user experience.
-            </p>
-
-        </div>
-
-
-        <div class="service">
-
-            <div class="icon">🛠️</div>
-
-            <h3>Website Maintenance</h3>
-
-            <p>
-                Updating website content and making improvements
-                to existing pages.
-            </p>
-
-        </div>
-
-    </div>
-
-</section>
-
-
-<!-- =========================
-     SKILLS PROGRESS
-========================= -->
-
-<section id="skills">
-
-    <h2>My Skills</h2>
-
-    <div class="skills">
-
-
-        <div class="skill-bar">
-
-            <div class="skill-name">
-                <span>HTML</span>
-                <span>90%</span>
-            </div>
-
-            <div class="progress">
-                <div style="width:90%"></div>
-            </div>
-
-        </div>
-
-
-        <div class="skill-bar">
-
-            <div class="skill-name">
-                <span>CSS</span>
-                <span>80%</span>
-            </div>
-
-            <div class="progress">
-                <div style="width:80%"></div>
-            </div>
-
-        </div>
-
-
-        <div class="skill-bar">
-
-            <div class="skill-name">
-                <span>JavaScript</span>
-                <span>65%</span>
-            </div>
-
-            <div class="progress">
-                <div style="width:65%"></div>
-            </div>
-
-        </div>
-
-
-        <div class="skill-bar">
-
-            <div class="skill-name">
-                <span>Responsive Web Design</span>
-                <span>80%</span>
-            </div>
-
-            <div class="progress">
-                <div style="width:80%"></div>
-            </div>
-
-        </div>
-
-
-        <div class="skill-bar">
-
-            <div class="skill-name">
-                <span>Bootstrap</span>
-                <span>60%</span>
-            </div>
-
-            <div class="progress">
-                <div style="width:60%"></div>
-            </div>
-
-        </div>
-
-
-        <div class="skill-bar">
-
-            <div class="skill-name">
-                <span>SEO Basics</span>
-                <span>65%</span>
-            </div>
-
-            <div class="progress">
-                <div style="width:65%"></div>
-            </div>
-
-        </div>
-
-
-    </div>
-
-</section>
-
-
-<!-- =========================
-     TECHNOLOGIES
-========================= -->
-
-<section>
-
-    <h2>Technologies I Use</h2>
-
-    <div class="technologies">
-
-        <div class="technology">HTML5</div>
-
-        <div class="technology">CSS3</div>
-
-        <div class="technology">JavaScript</div>
-
-        <div class="technology">Bootstrap</div>
-
-        <div class="technology">Git</div>
-
-        <div class="technology">GitHub</div>
-
-        <div class="technology">SEO</div>
-
-        <div class="technology">VS Code</div>
-
-    </div>
-
-</section>
-
-
-<!-- =========================
-     PROJECTS
-========================= -->
-
-<section id="projects">
-
-    <h2>My Projects</h2>
-
-    <div class="projects">
-
-
-        <div class="project">
-
-            <h3>🌐 Personal Website</h3>
-
-            <p>
-                A responsive personal portfolio website created
-                using HTML, CSS and JavaScript.
-            </p>
-
-            <a class="btn"
-               href="https://salmanseo1611-star.github.io/my-website/"
-               target="_blank">
-                Live Demo
-            </a>
-
-        </div>
-
-
-        <div class="project">
-
-            <h3>📋 Contact Form</h3>
-
-            <p>
-                A professional contact form with validation and
-                Formspree integration.
-            </p>
-
-            <a class="btn" href="#contact">
-                View Form
-            </a>
-
-        </div>
-
-
-        <div class="project">
-
-            <h3>🖼️ Image Gallery</h3>
-
-            <p>
-                A responsive portfolio gallery with different
-                image sizes and professional cards.
-            </p>
-
-            <a class="btn" href="#gallery">
-                View Gallery
-            </a>
-
-        </div>
-
-
-        <div class="project">
-
-            <h3>📊 Skills Dashboard</h3>
-
-            <p>
-                A simple skills section showing technologies
-                and learning progress.
-            </p>
-
-            <a class="btn" href="#skills">
-                View Skills
-            </a>
-
-        </div>
-
-
-        <div class="project">
-
-            <h3>🛒 Future Project</h3>
-
-            <p>
-                A future web project that will be created while
-                continuing my web development learning.
-            </p>
-
-        </div>
-
-
-        <div class="project">
-
-            <h3>🚀 Portfolio Project</h3>
-
-            <p>
-                My portfolio will continue to improve as I learn
-                new web development technologies.
-            </p>
-
-        </div>
-
-
-    </div>
-
-</section>
-
-
-<!-- =========================
-     GALLERY
-========================= -->
-
-<section id="gallery">
-
-    <h2>My Projects & Work Gallery</h2>
-
-    <div class="gallery">
-
-
-        <!-- 1 -->
-
-        <div class="gallery-item">
-
-            <a href="image.jpg" target="_blank">
-                <img src="image.jpg" alt="Web Development">
-            </a>
-
-            <h3>Web Development</h3>
-
-            <p>
-                Web development is the process of creating modern
-                and useful websites. It combines design, coding and
-                technology to build complete online experiences.
-                I am learning HTML, CSS and JavaScript to create
-                responsive and professional websites. I am also
-                learning website layouts, cards, galleries,
-                navigation menus and contact forms. My goal is to
-                create websites that are useful, professional and
-                easy to use.
-            </p>
-
-        </div>
-
-
-        <!-- 2 -->
-
-        <div class="gallery-item">
-
-            <a href="photo.jpg" target="_blank">
-                <img src="photo.jpg" alt="Coding">
-            </a>
-
-            <h3>Coding</h3>
-
-            <p>
-                Writing clean and effective code.
-            </p>
-
-        </div>
-
-
-        <!-- 3 -->
-
-        <div class="gallery-item">
-
-            <a href="picture.jpg" target="_blank">
-                <img src="picture.jpg" alt="Network Connectivity">
-            </a>
-
-            <h3>Network Connectivity</h3>
-
-            <p>
-                Network connectivity allows computers and devices
-                to communicate with each other. It helps devices
-                share information and resources efficiently.
-                Reliable networks provide stable communication.
-                Networks can connect computers, mobile devices,
-                servers and other technologies. I am learning the
-                basic concepts of networking and communication.
-            </p>
-
-        </div>
-
-
-        <!-- 4 -->
-
-        <div class="gallery-item">
-
-            <a href="image4.jpg" target="_blank">
-                <img src="image4.jpg" alt="Web Design">
-            </a>
-
-            <h3>Web Design</h3>
-
-            <p>
-                Creating clean and modern web designs.
-            </p>
-
-        </div>
-
-
-        <!-- 5 -->
-
-        <div class="gallery-item">
-
-            <a href="image5.jpg" target="_blank">
-                <img src="image5.jpg" alt="Web Design">
-            </a>
-
-            <h3>Web Design</h3>
-
-            <p>
-                Designing attractive and user-friendly websites.
-            </p>
-
-        </div>
-
-
-        <!-- 6 -->
-
-        <div class="gallery-item">
-
-            <a href="image6.jpg" target="_blank">
-                <img src="image6.jpg" alt="Coding">
-            </a>
-
-            <h3>Coding</h3>
-
-            <p>
-                Learning and using programming languages.
-            </p>
-
-        </div>
-
-
-        <!-- 7 -->
-
-        <div class="gallery-item">
-
-            <a href="image7.jpg" target="_blank">
-                <img src="image7.jpg" alt="Web Development">
-            </a>
-
-            <h3>Web Development</h3>
-
-            <p>
-                Developing modern and functional websites.
-            </p>
-
-        </div>
-
-
-        <!-- 8 -->
-
-        <div class="gallery-item">
-
-            <a href="image8.jpg" target="_blank">
-                <img src="image8.jpg" alt="UI UX Design">
-            </a>
-
-            <h3>UI/UX Design</h3>
-
-            <p>
-                UI/UX design focuses on creating simple and
-                user-friendly websites. Good interfaces make
-                information easy to understand and navigate.
-                Clean layouts, clear buttons and organized
-                content improve the user experience.
-            </p>
-
-        </div>
-
-
-        <!-- 9 -->
-
-        <div class="gallery-item">
-
-            <a href="image9.jpg" target="_blank">
-                <img src="image9.jpg" alt="Computer Technology">
-            </a>
-
-            <h3>Computer Technology</h3>
-
-            <p>
-                Exploring modern computer technology.
-            </p>
-
-        </div>
-
-
-        <!-- 10 -->
-
-        <div class="gallery-item">
-
-            <a href="image10.jpg" target="_blank">
-                <img src="image10.jpg" alt="Programming">
-            </a>
-
-            <h3>Programming</h3>
-
-            <p>
-                Learning programming and coding skills.
-            </p>
-
-        </div>
-
-
-        <!-- 11 -->
-
-        <div class="gallery-item">
-
-            <a href="image11.jpg" target="_blank">
-                <img src="image11.jpg" alt="Web Design">
-            </a>
-
-            <h3>Web Design</h3>
-
-            <p>
-                Designing modern and creative websites.
-            </p>
-
-        </div>
-
-
-        <!-- 12 -->
-
-        <div class="gallery-item">
-
-            <a href="image12.jpg" target="_blank">
-                <img src="image12.jpg" alt="Programming Language">
-            </a>
-
-            <h3>Programming Language</h3>
-
-            <p>
-                Exploring programming languages and concepts.
-            </p>
-
-        </div>
-
-
-        <!-- 13 -->
-
-        <div class="gallery-item">
-
-            <a href="image13.jpg" target="_blank">
-                <img src="image13.jpg" alt="HTML">
-            </a>
-
-            <h3>HTML</h3>
-
-            <p>
-                Building the structure of modern websites.
-            </p>
-
-        </div>
-
-
-        <!-- 14 -->
-
-        <div class="gallery-item">
-
-            <a href="image14.jpg" target="_blank">
-                <img src="image14.jpg" alt="CSS">
-            </a>
-
-            <h3>CSS</h3>
-
-            <p>
-                Designing beautiful and responsive web pages.
-            </p>
-
-        </div>
-
-
-        <!-- 15 -->
-
-        <div class="gallery-item">
-
-            <a href="image15.jpg" target="_blank">
-                <img src="image15.jpg" alt="JavaScript">
-            </a>
-
-            <h3>JavaScript</h3>
-
-            <p>
-                Adding interactive features to websites.
-            </p>
-
-        </div>
-
-
-        <!-- 16 -->
-
-        <div class="gallery-item">
-
-            <a href="image16.jpg" target="_blank">
-                <img src="image16.jpg" alt="Website Dashboard">
-            </a>
-
-            <h3>Website Dashboard</h3>
-
-            <p>
-                Designing organized and professional website
-                dashboards with useful sections and easy
-                navigation.
-            </p>
-
-        </div>
-
-
-    </div>
-
-</section>
-
-
-<!-- =========================
-     ABOUT
-========================= -->
-
-<section id="about">
-
-    <div class="about-box">
-
-        <h2>About Me</h2>
-
-        <p>
-            I am learning Web Development and improving my
-            computer skills. I am interested in creating modern,
-            responsive and useful websites.
-        </p>
-
-        <br>
-
-        <p>
-            I enjoy learning new technologies and creating
-            practical website projects.
-        </p>
-
-    </div>
-
-</section>
-
-
-<!-- =========================
-     GOAL
-========================= -->
-
-<section>
-
-    <div class="goal-box">
-
-        <h2>My Goal</h2>
-
-        <p>
-            I want to become a professional Web Developer.
-        </p>
-
-        <br>
-
-        <p>
-            My goal is to build professional, useful and
-            user-friendly websites.
-        </p>
-
-    </div>
-
-</section>
-
-
-<!-- =========================
-     CV
-========================= -->
-
-<section class="cv-section">
-
-    <h2>My Resume</h2>
+    <h2 id="about">About Me</h2>
 
     <p>
-        Download my CV to learn more about my skills,
-        education and web development journey.
+        I am learning Web Development and improving my computer skills.
+        I am interested in creating modern, responsive and user-friendly websites.
     </p>
 
-    <br>
+    <p>
+        I enjoy learning new technologies and building practical projects.
+        My goal is to become a professional Web Developer.
+    </p>
 
-    <a class="btn" href="cv.pdf" download>
-        📄 Download CV
-    </a>
-
-</section>
-
-
-<!-- =========================
-     SOCIAL MEDIA
-========================= -->
-
-<section>
-
-    <h2>Connect With Me</h2>
-
-    <div class="social">
-
-        <a href="https://github.com/"
-           target="_blank">
-            💻 GitHub
-        </a>
-
-        <a href="https://www.linkedin.com/"
-           target="_blank">
-            💼 LinkedIn
-        </a>
-
-        <a href="mailto:salman.seo1611@gmail.com">
-            📧 Email
-        </a>
-
-    </div>
-
-</section>
+</div>
 
 
-<!-- =========================
-     CONTACT
-========================= -->
+<!-- SERVICES -->
 
-<section id="contact">
+<h2 id="services">My Services</h2>
 
-    <div class="contact-box">
+<div class="services">
 
-        <h2>Contact Me</h2>
+    <div class="service">
+
+        <div class="service-icon">🌐</div>
+
+        <h3>Web Development</h3>
 
         <p>
-            Feel free to contact me for questions,
-            suggestions or website projects.
-        </p>
-
-        <br>
-
-        <p>
-            Email:
-            <a href="mailto:salman.seo1611@gmail.com">
-                salman.seo1611@gmail.com
-            </a>
+            Creating modern and responsive websites using HTML, CSS
+            and JavaScript.
         </p>
 
     </div>
 
 
-    <form id="contact-form"
-        action="https://formspree.io/f/mqpzjnly"
-        method="POST">
+    <div class="service">
+
+        <div class="service-icon">🎨</div>
+
+        <h3>Web Design</h3>
+
+        <p>
+            Designing clean, attractive and user-friendly website layouts.
+        </p>
+
+    </div>
 
 
-        <input
-            type="hidden"
-            name="_next"
-            value="https://salmanseo1611-star.github.io/my-website/thank-you.html">
+    <div class="service">
+
+        <div class="service-icon">📱</div>
+
+        <h3>Responsive Design</h3>
+
+        <p>
+            Creating websites that work properly on mobile, tablet
+            and computer screens.
+        </p>
+
+    </div>
 
 
-        <div class="form-group">
+    <div class="service">
 
-            <label>Name</label>
+        <div class="service-icon">📊</div>
 
-            <input
-                type="text"
-                name="name"
-                placeholder="Enter your name"
-                required>
+        <h3>Data Entry</h3>
 
+        <p>
+            Organizing and managing information accurately using
+            computer tools.
+        </p>
+
+    </div>
+
+
+    <div class="service">
+
+        <div class="service-icon">🔍</div>
+
+        <h3>SEO Basics</h3>
+
+        <p>
+            Applying basic SEO techniques to improve website visibility.
+        </p>
+
+    </div>
+
+
+    <div class="service">
+
+        <div class="service-icon">⚡</div>
+
+        <h3>Website Optimization</h3>
+
+        <p>
+            Improving website structure, usability and overall performance.
+        </p>
+
+    </div>
+
+</div>
+
+
+<!-- SKILLS -->
+
+<h2 id="skills">My Skills</h2>
+
+<div class="skills">
+
+
+    <div class="skill">
+
+        <div class="skill-title">
+            <span>HTML</span>
+            <span>90%</span>
         </div>
 
-
-        <div class="form-group">
-
-            <label>Email</label>
-
-            <input
-                type="email"
-                name="email"
-                placeholder="Enter your email"
-                required>
-
+        <div class="progress">
+            <div class="progress-bar" style="width:90%;"></div>
         </div>
 
+    </div>
 
-        <div class="form-group">
 
-            <label>Phone</label>
+    <div class="skill">
 
-            <input
-                type="tel"
-                name="phone"
-                placeholder="Enter your phone number"
-                required>
-
+        <div class="skill-title">
+            <span>CSS</span>
+            <span>85%</span>
         </div>
 
-
-        <div class="form-group">
-
-            <label>Message</label>
-
-            <textarea
-                name="message"
-                rows="5"
-                placeholder="Write your message"
-                required></textarea>
-
+        <div class="progress">
+            <div class="progress-bar" style="width:85%;"></div>
         </div>
 
-
-        <button
-            class="send-btn"
-            type="submit">
-
-            Send Message
-
-        </button>
+    </div>
 
 
-    </form>
+    <div class="skill">
+
+        <div class="skill-title">
+            <span>JavaScript</span>
+            <span>70%</span>
+        </div>
+
+        <div class="progress">
+            <div class="progress-bar" style="width:70%;"></div>
+        </div>
+
+    </div>
 
 
-    <p id="success-message">
-        Thank You! Your message has been sent successfully.
-    </p>
+    <div class="skill">
 
-</section>
+        <div class="skill-title">
+            <span>Responsive Web Design</span>
+            <span>80%</span>
+        </div>
+
+        <div class="progress">
+            <div class="progress-bar" style="width:80%;"></div>
+        </div>
+
+    </div>
+
+
+    <div class="skill">
+
+        <div class="skill-title">
+            <span>Git & GitHub</span>
+            <span>65%</span>
+        </div>
+
+        <div class="progress">
+            <div class="progress-bar" style="width:65%;"></div>
+        </div>
+
+    </div>
+
+
+    <div class="skill">
+
+        <div class="skill-title">
+            <span>SEO Basics</span>
+            <span>70%</span>
+        </div>
+
+        <div class="progress">
+            <div class="progress-bar" style="width:70%;"></div>
+        </div>
+
+    </div>
 
 
 </div>
 
 
-<!-- =========================
-     FOOTER
-========================= -->
+<!-- PROJECTS -->
+
+<h2 id="projects">My Projects</h2>
+
+<div class="projects">
+
+
+    <div class="project">
+
+        <img src="image.jpg" alt="Personal Website">
+
+        <div class="project-content">
+
+            <h3>Personal Website</h3>
+
+            <p>
+                A responsive personal portfolio website created using
+                HTML and CSS with modern sections and navigation.
+            </p>
+
+        </div>
+
+    </div>
+
+
+    <div class="project">
+
+        <img src="image8.jpg" alt="UI UX Project">
+
+        <div class="project-content">
+
+            <h3>UI/UX Design</h3>
+
+            <p>
+                A clean and user-friendly website interface designed
+                with organized sections and modern layouts.
+            </p>
+
+        </div>
+
+    </div>
+
+
+    <div class="project">
+
+        <img src="image16.jpg" alt="Dashboard Project">
+
+        <div class="project-content">
+
+            <h3>Website Dashboard</h3>
+
+            <p>
+                A professional dashboard concept with organized
+                information and simple navigation.
+            </p>
+
+        </div>
+
+    </div>
+
+
+</div>
+
+
+<!-- CV -->
+
+<div class="cv-section">
+
+    <h2>My CV</h2>
+
+    <p>
+        Download my CV to learn more about my skills and education.
+    </p>
+
+    <a class="cv-btn" href="cv.pdf" download>
+        📄 Download CV
+    </a>
+
+</div>
+
+
+<!-- GALLERY -->
+
+<h2 id="gallery">My Projects & Work</h2>
+
+<div class="gallery">
+
+
+<!-- Picture 1 -->
+
+<div class="gallery-item">
+
+    <a href="image.jpg" target="_blank">
+        <img src="image.jpg" alt="Web Development">
+    </a>
+
+    <h3>Web Development</h3>
+
+    <p>
+        Web development is the process of creating modern and useful
+        websites. It combines HTML, CSS and JavaScript to build
+        complete online experiences. I am learning how to create
+        responsive layouts, professional navigation, cards,
+        galleries and contact forms. I am continuously practicing
+        my skills by building practical projects and improving
+        website structure, design and usability.
+    </p>
+
+</div>
+
+
+<!-- Picture 2 -->
+
+<div class="gallery-item">
+
+    <a href="photo.jpg" target="_blank">
+        <img src="photo.jpg" alt="Coding">
+    </a>
+
+    <h3>Coding</h3>
+
+    <p>
+        Writing clean and effective code.
+    </p>
+
+</div>
+
+
+<!-- Picture 3 -->
+
+<div class="gallery-item">
+
+    <a href="picture.jpg" target="_blank">
+        <img src="picture.jpg" alt="Network Connectivity">
+    </a>
+
+    <h3>Network Connectivity</h3>
+
+    <p>
+        Network connectivity allows computers and devices to
+        communicate with each other. It helps devices share
+        information and resources efficiently. A reliable network
+        provides stable communication between connected devices.
+        I am learning the basic concepts of networking and
+        network communication. Understanding connectivity is
+        an important part of modern computer technology.
+    </p>
+
+</div>
+
+
+<!-- Picture 4 -->
+
+<div class="gallery-item">
+
+    <a href="image4.jpg" target="_blank">
+        <img src="image4.jpg" alt="Web Design">
+    </a>
+
+    <h3>Web Design</h3>
+
+    <p>
+        Creating clean and modern web designs.
+    </p>
+
+</div>
+
+
+<!-- Picture 5 -->
+
+<div class="gallery-item">
+
+    <a href="image5.jpg" target="_blank">
+        <img src="image5.jpg" alt="Web Design">
+    </a>
+
+    <h3>Web Design</h3>
+
+    <p>
+        Designing attractive and user-friendly websites.
+    </p>
+
+</div>
+
+
+<!-- Picture 6 -->
+
+<div class="gallery-item">
+
+    <a href="image6.jpg" target="_blank">
+        <img src="image6.jpg" alt="Coding">
+    </a>
+
+    <h3>Coding</h3>
+
+    <p>
+        Learning and using programming languages.
+    </p>
+
+</div>
+
+
+<!-- Picture 7 -->
+
+<div class="gallery-item">
+
+    <a href="image7.jpg" target="_blank">
+        <img src="image7.jpg" alt="Web Development">
+    </a>
+
+    <h3>Web Development</h3>
+
+    <p>
+        Developing modern and functional websites.
+    </p>
+
+</div>
+
+
+<!-- Picture 8 -->
+
+<div class="gallery-item">
+
+    <a href="image8.jpg" target="_blank">
+        <img src="image8.jpg" alt="UI UX Design">
+    </a>
+
+    <h3>UI/UX Design</h3>
+
+    <p>
+        UI/UX design focuses on creating simple and user-friendly
+        websites with clear layouts and easy navigation.
+    </p>
+
+</div>
+
+
+<!-- Picture 9 -->
+
+<div class="gallery-item">
+
+    <a href="image9.jpg" target="_blank">
+        <img src="image9.jpg" alt="Computer Technology">
+    </a>
+
+    <h3>Computer Technology</h3>
+
+    <p>
+        Exploring modern computer technology.
+    </p>
+
+</div>
+
+
+<!-- Picture 10 -->
+
+<div class="gallery-item">
+
+    <a href="image10.jpg" target="_blank">
+        <img src="image10.jpg" alt="Programming">
+    </a>
+
+    <h3>Programming</h3>
+
+    <p>
+        Learning programming and coding skills.
+    </p>
+
+</div>
+
+
+<!-- Picture 11 -->
+
+<div class="gallery-item">
+
+    <a href="image11.jpg" target="_blank">
+        <img src="image11.jpg" alt="Web Design">
+    </a>
+
+    <h3>Web Design</h3>
+
+    <p>
+        Designing modern and creative websites.
+    </p>
+
+</div>
+
+
+<!-- Picture 12 -->
+
+<div class="gallery-item">
+
+    <a href="image12.jpg" target="_blank">
+        <img src="image12.jpg" alt="Programming Language">
+    </a>
+
+    <h3>Programming Language</h3>
+
+    <p>
+        Exploring programming languages and concepts.
+    </p>
+
+</div>
+
+
+<!-- Picture 13 -->
+
+<div class="gallery-item">
+
+    <a href="image13.jpg" target="_blank">
+        <img src="image13.jpg" alt="HTML">
+    </a>
+
+    <h3>HTML</h3>
+
+    <p>
+        Building the structure of modern websites.
+    </p>
+
+</div>
+
+
+<!-- Picture 14 -->
+
+<div class="gallery-item">
+
+    <a href="image14.jpg" target="_blank">
+        <img src="image14.jpg" alt="CSS">
+    </a>
+
+    <h3>CSS</h3>
+
+    <p>
+        Designing beautiful and responsive web pages.
+    </p>
+
+</div>
+
+
+<!-- Picture 15 -->
+
+<div class="gallery-item">
+
+    <a href="image15.jpg" target="_blank">
+        <img src="image15.jpg" alt="JavaScript">
+    </a>
+
+    <h3>JavaScript</h3>
+
+    <p>
+        Adding interactive features to websites.
+    </p>
+
+</div>
+
+
+<!-- Picture 16 -->
+
+<div class="gallery-item">
+
+    <a href="image16.jpg" target="_blank">
+        <img src="image16.jpg" alt="Website Dashboard">
+    </a>
+
+    <h3>Website Dashboard</h3>
+
+    <p>
+        Designing organized and professional website dashboards
+        with useful sections and easy navigation.
+    </p>
+
+</div>
+
+
+</div>
+
+
+<!-- GOAL -->
+
+<div class="goal-box">
+
+    <h2 id="goal">My Goal</h2>
+
+    <p>
+        I want to become a professional Web Developer.
+    </p>
+
+    <p>
+        My goal is to build professional, useful and
+        user-friendly websites.
+    </p>
+
+</div>
+
+
+<!-- SOCIAL MEDIA -->
+
+<h2>Find Me Online</h2>
+
+<div class="social-links">
+
+    <a href="https://github.com/" target="_blank">
+        💻 GitHub
+    </a>
+
+    <a href="https://www.linkedin.com/" target="_blank">
+        💼 LinkedIn
+    </a>
+
+    <a href="https://www.facebook.com/" target="_blank">
+        📘 Facebook
+    </a>
+
+</div>
+
+
+<!-- CONTACT -->
+
+<div class="contact-box">
+
+    <h2 id="contact">Contact Me</h2>
+
+    <p>
+        You can contact me through my website.
+    </p>
+
+    <p>
+        Feel free to contact me for questions or projects.
+    </p>
+
+    <p class="email">
+
+        Email:
+
+        <a href="mailto:salman.seo1611@gmail.com">
+            salman.seo1611@gmail.com
+        </a>
+
+    </p>
+
+</div>
+
+
+<!-- CONTACT FORM -->
+
+<form
+    id="contact-form"
+    action="https://formspree.io/f/mqpzjnly"
+    method="POST"
+>
+
+
+    <input
+        type="hidden"
+        name="_next"
+        value="https://salmanseo1611-star.github.io/my-website/thank-you.html"
+    >
+
+
+    <div class="form-group">
+
+        <label>Name:</label>
+
+        <input
+            type="text"
+            name="name"
+            placeholder="Enter your name"
+            required
+        >
+
+    </div>
+
+
+    <div class="form-group">
+
+        <label>Email:</label>
+
+        <input
+            type="email"
+            name="email"
+            placeholder="Enter your email"
+            required
+        >
+
+    </div>
+
+
+    <div class="form-group">
+
+        <label>Phone:</label>
+
+        <input
+            type="tel"
+            name="phone"
+            placeholder="Enter your phone number"
+            required
+        >
+
+    </div>
+
+
+    <div class="form-group">
+
+        <label>Message:</label>
+
+        <textarea
+            name="message"
+            rows="5"
+            placeholder="Write your message"
+            required
+        ></textarea>
+
+    </div>
+
+
+    <button
+        class="send-btn"
+        type="submit"
+    >
+        Send Message
+    </button>
+
+
+</form>
+
+
+<p id="success-message">
+    Thank You! Your message has been sent successfully.
+</p>
+
+
+</div>
+
+
+<!-- FOOTER -->
 
 <footer>
 
@@ -1716,21 +1442,9 @@
         © 2026 Muhammad Salman. All Rights Reserved.
     </p>
 
-    <br>
-
-    <div>
-
-        <a href="#home">Home</a>
-
-        <a href="#about">About</a>
-
-        <a href="#services">Services</a>
-
-        <a href="#projects">Projects</a>
-
-        <a href="#contact">Contact</a>
-
-    </div>
+    <p>
+        Web Development Portfolio
+    </p>
 
 </footer>
 
@@ -1742,47 +1456,86 @@
     onclick="window.scrollTo({
         top: 0,
         behavior: 'smooth'
-    })">
-
+    })"
+>
     ↑
-
 </button>
 
 
-<!-- =========================
-     JAVASCRIPT
-========================= -->
+<!-- JAVASCRIPT -->
 
 <script>
 
+/* DARK MODE */
 
-/* =========================
-   DARK / LIGHT MODE
-========================= */
+function toggleDarkMode() {
 
-function toggleTheme() {
-
-    document.body.classList.toggle("dark");
+    document.body.classList.toggle("dark-mode");
 
     const button =
-        document.getElementById("themeBtn");
+        document.getElementById("darkModeBtn");
 
-    if (document.body.classList.contains("dark")) {
+    if (document.body.classList.contains("dark-mode")) {
 
-        button.innerHTML = "☀️ Light Mode";
+        button.innerHTML = "☀️";
 
     } else {
 
-        button.innerHTML = "🌙 Dark Mode";
+        button.innerHTML = "🌙";
 
     }
 
 }
 
 
-/* =========================
-   BACK TO TOP
-========================= */
+/* CONTACT FORM */
+
+const form =
+    document.getElementById("contact-form");
+
+const successMessage =
+    document.getElementById("success-message");
+
+
+form.addEventListener("submit", async function(event) {
+
+    event.preventDefault();
+
+    const formData =
+        new FormData(form);
+
+    const response =
+        await fetch(form.action, {
+
+            method: "POST",
+
+            body: formData,
+
+            headers: {
+                "Accept": "application/json"
+            }
+
+        });
+
+
+    if (response.ok) {
+
+        form.reset();
+
+        successMessage.style.display = "block";
+
+    } else {
+
+        alert(
+            "Something went wrong. Please try again."
+        );
+
+    }
+
+});
+
+
+/* BACK TO TOP */
 
 window.addEventListener("scroll", function() {
 
@@ -1800,85 +1553,6 @@ window.addEventListener("scroll", function() {
     }
 
 });
-
-
-/* =========================
-   CONTACT FORM
-========================= */
-
-const form =
-    document.getElementById("contact-form");
-
-const successMessage =
-    document.getElementById("success-message");
-
-
-form.addEventListener("submit", async function(event) {
-
-    event.preventDefault();
-
-    const sendButton =
-        form.querySelector(".send-btn");
-
-    sendButton.innerHTML = "Sending...";
-
-    sendButton.disabled = true;
-
-
-    const formData =
-        new FormData(form);
-
-
-    try {
-
-        const response =
-            await fetch(form.action, {
-
-                method: "POST",
-
-                body: formData,
-
-                headers: {
-                    "Accept": "application/json"
-                }
-
-            });
-
-
-        if (response.ok) {
-
-            form.reset();
-
-            successMessage.style.display = "block";
-
-            sendButton.innerHTML = "Message Sent ✓";
-
-        } else {
-
-            alert(
-                "Something went wrong. Please try again."
-            );
-
-            sendButton.innerHTML = "Send Message";
-
-            sendButton.disabled = false;
-
-        }
-
-    } catch (error) {
-
-        alert(
-            "Please check your internet connection."
-        );
-
-        sendButton.innerHTML = "Send Message";
-
-        sendButton.disabled = false;
-
-    }
-
-});
-
 
 </script>
 

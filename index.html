@@ -8,7 +8,7 @@
         body {
             background-color: lightblue;
             margin: 0;
-            padding: 20px;
+            padding: 0;
             font-family: Arial, sans-serif;
         }
 
@@ -93,35 +93,41 @@
             margin-top: 30px;
             margin-bottom: 20px;
         }   
-        nav {
-            background-color: white;
-            padding: 15px;
-            text-align: center;
-            margin-bottom: 20px;
-            border-radius: 10px;
-            box-shadow: 0 3px 10px gray;
-        }
-   
-        nav a {           
-            margin: 0 15px;
-            text-decoration: none;
-            color: darkblue;
-            font-weight: bold;
-            font-size: 17px;
-            padding: 8px 12px;
-            border-radius: 5px;
-            
-        }
+   nav {
+    background-color: darkblue;
+    padding: 18px;
+    text-align: center;
+    margin-bottom: 25px;
+    box-shadow: 0 3px 10px gray;
+}
 
-        .container {
-            background-color: white;
-            max-width: 900px;
-            width: 80%;
-            margin: auto;
-            padding: 20px;
-            border-radius: 15px;
-            box-shadow: 0 4px 15px gray;
-        }
+nav a {
+    color: white;
+    text-decoration: none;
+    margin: 0 8px;
+    font-size: 17px;
+    font-weight: bold;
+    padding: 10px 14px;
+    border-radius: 6px;
+    display: inline-block;
+    transition: 0.3s;
+}
+
+nav a:hover {
+    color: white;
+    background-color: green;
+    transform: translateY(-2px);
+}
+.container {
+    background-color: white;
+    width: 100%;
+    max-width: none;
+    margin: 0;
+    padding: 30px;
+    box-sizing: border-box;
+    border-radius: 0;
+    box-shadow: none;
+}
 
         ul {
             width: 200px;
@@ -145,15 +151,20 @@
             margin: 8px 0;
             color: darkblue;
         }  
-        footer {
-            text-align: center;
-            margin-top: 30px;
-            padding: 15px;
-            background-color: darkblue;
-            color: white;
-            font-size: 16px;
-            border-radius: 10px;
-        }
+      footer {
+    text-align: center;
+    margin-top: 40px;
+    padding: 25px 15px;
+    background-color: darkblue;
+    color: white;
+    font-size: 16px;
+    border-radius: 0;
+    box-shadow: 0 -3px 10px gray;
+}
+
+footer p {
+    margin: 0;
+}
 
         .email {
             text-align: center;
@@ -252,20 +263,21 @@
     border-radius: 20px;
     box-shadow: 0 4px 15px gray;
 }
+
 .hero h1 {
-    font-size: 42px;
-    margin-bottom: 10px;
-    letter-spacing: 1px;
+    font-size: 40px;
+    margin-bottom: 15px;
+    color: darkblue;
 }
+
 .hero p {
     font-size: 20px;
-    color: darkblue;
+    color: #555;
     margin-bottom: 20px;
 }
+
 .hero button {
-    margin: 10px 5px;
-    min-width: 140px;
-    font-weight: bold;
+    margin: 8px 5px;
 }
 
 nav {
@@ -303,19 +315,33 @@ nav a:hover {
     box-shadow: 0 4px 10px gray;
     width: 180px;
     text-align: center;
-    transition: 0.3s;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
 }
 
 .skill:hover {
     transform: translateY(-8px) scale(1.03);
     box-shadow: 0 8px 15px gray;
 }
-}
 
 @media (max-width: 600px) {
     .skill {
         width: 90%;
     }
+
+@media (max-width: 600px) {
+
+    .skills {
+        gap: 15px;
+        padding: 10px;
+    }
+
+    .skill {
+        width: 100%;
+        max-width: 350px;
+        box-sizing: border-box;
+    }
+
+}
 } 
 
 .about-box {
@@ -416,7 +442,106 @@ html {
 .contact-box {
     margin-bottom: 40px;
 }
+
+#gallery {
+    margin-top: 40px;
+    margin-bottom: 25px;
+    font-size: 30px;
+}
+
+#topBtn {
+    display: none;
+    position: fixed;
+    bottom: 20px;
+    right: 20px;
+    background-color: darkblue;
+    color: white;
+    border: none;
+    padding: 12px 16px;
+    border-radius: 50%;
+    cursor: pointer;
+    font-size: 16px;
+    box-shadow: 0 4px 10px gray;
+    z-index: 1000;
+}
+
+#topBtn:hover {
+    background-color: green;
+}
+
+#topBtn:hover {
+    background-color: green;
+}
+
+.contact-box h2 {
+    font-size: 30px;
+    margin-bottom: 15px;
+}
+
+.contact-box p {
+    color: #555;
+}
+
+.contact-box a {
+    color: darkblue;
+    font-weight: bold;
+    text-decoration: none;
+}
+
+.contact-box a:hover {
+    color: green;
+    text-decoration: underline;
+}
+
+#contact-form {
+    background-color: white;
+    padding: 25px;
+    border-radius: 15px;
+    box-shadow: 0 4px 15px gray;
+    max-width: 600px;
+    margin: 30px auto;
+    box-sizing: border-box;
+}
+
+#contact-form input,
+#contact-form textarea {
+    box-sizing: border-box;
+    border: 1px solid #ccc;
+    transition: 0.3s;
+}
+
+#contact-form input:focus,
+#contact-form textarea:focus {
+    border: 2px solid darkblue;
+    box-shadow: 0 0 5px lightblue;
+}
+
+.skill p {
+    font-size: 15px;
+    color: #555;
+    line-height: 1.5;
+    margin-top: 10px;
+}
+
+.skill h3 {
+    color: darkblue;
+    margin-bottom: 8px;
+}
+
+.gallery-item {
+    overflow: hidden;
+}
+
+.gallery-item img {
+    transition: transform 0.4s ease;
+}
+
+.gallery-item:hover img {
+    transform: scale(1.08);
+}
+
     </style>  
+
 </head>
 
 <body id="top">
@@ -425,6 +550,7 @@ html {
     <a href="#home">Home</a>
     <a href="#about">About</a>
     <a href="#goal">Goal</a>
+    <a href="#gallery">Gallery</a>
     <a href="#skills">Skills</a>
     <a href="#contact">contact</a>
 </nav>
@@ -450,89 +576,138 @@ html {
 <div class="gallery">
 
 <div class="gallery-item">
-    <img src="image.jpg" alt="Web Development">
+
+    <a href="image.jpg" target="_blank">
+        <img src="image.jpg" alt="Web Development">
+    </a>
+
     <h3>Web Development</h3>
     <p>Building modern and responsive websites.</p>
+
 </div>
 
-    <div class="gallery-item">
-    <img src="photo.jpg" alt="Coding">
+    <!-- Picture 2 -->
+<div class="gallery-item">
+    <a href="photo.jpg" target="_blank">
+        <img src="photo.jpg" alt="Coding">
+    </a>
     <h3>Coding</h3>
     <p>Writing clean and effective code.</p>
 </div>
 
-    <div class="gallery-item">
-    <img src="picture.jpg" alt="Network Connectivity">
+<!-- Picture 3 -->
+<div class="gallery-item">
+    <a href="picture.jpg" target="_blank">
+        <img src="picture.jpg" alt="Network Connectivity">
+    </a>
     <h3>Network Connectivity</h3>
     <p>Connecting multiple points through a network.</p>
 </div>
-    <div class="gallery-item">
-    <img src="image4.jpg" alt="Web Design">
+
+<!-- Picture 4 -->
+<div class="gallery-item">
+    <a href="image4.jpg" target="_blank">
+        <img src="image4.jpg" alt="Web Design">
+    </a>
     <h3>Web Design</h3>
     <p>Creating clean and modern web designs.</p>
 </div>
 
-    <div class="gallery-item">
-    <img src="image5.jpg" alt="Web Design">
+<!-- Picture 5 -->
+<div class="gallery-item">
+    <a href="image5.jpg" target="_blank">
+        <img src="image5.jpg" alt="Web Design">
+    </a>
     <h3>Web Design</h3>
     <p>Designing attractive and user-friendly websites.</p>
 </div>
 
+<!-- Picture 6 -->
 <div class="gallery-item">
-    <img src="image6.jpg" alt="Coding Language">
+    <a href="image6.jpg" target="_blank">
+        <img src="image6.jpg" alt="Coding">
+    </a>
     <h3>Coding</h3>
     <p>Learning and using programming languages.</p>
 </div>
+
+<!-- Picture 7 -->
 <div class="gallery-item">
-    <img src="image7.jpg" alt="Web Development">
+    <a href="image7.jpg" target="_blank">
+        <img src="image7.jpg" alt="Web Development">
+    </a>
     <h3>Web Development</h3>
     <p>Developing modern and functional websites.</p>
 </div>
 
+<!-- Picture 8 -->
 <div class="gallery-item">
-    <img src="image8.jpg" alt="Web Development">
+    <a href="image8.jpg" target="_blank">
+        <img src="image8.jpg" alt="Web Development">
+    </a>
     <h3>Web Development</h3>
     <p>Creating responsive and user-friendly websites.</p>
 </div>
-    
+
+<!-- Picture 9 -->
 <div class="gallery-item">
-    <img src="image9.jpg" alt="Computer Technology">
+    <a href="image9.jpg" target="_blank">
+        <img src="image9.jpg" alt="Computer Technology">
+    </a>
     <h3>Computer Technology</h3>
     <p>Exploring modern computer technology.</p>
 </div>
-    
+
+<!-- Picture 10 -->
 <div class="gallery-item">
-    <img src="image10.jpg" alt="Programming">
+    <a href="image10.jpg" target="_blank">
+        <img src="image10.jpg" alt="Programming">
+    </a>
     <h3>Programming</h3>
     <p>Learning programming and coding skills.</p>
 </div>
 
+<!-- Picture 11 -->
 <div class="gallery-item">
-    <img src="image11.jpg" alt="Web Design">
+    <a href="image11.jpg" target="_blank">
+        <img src="image11.jpg" alt="Web Design">
+    </a>
     <h3>Web Design</h3>
     <p>Designing modern and creative websites.</p>
 </div>
 
+<!-- Picture 12 -->
 <div class="gallery-item">
-    <img src="image12.jpg" alt="Programming Language">
+    <a href="image12.jpg" target="_blank">
+        <img src="image12.jpg" alt="Programming Language">
+    </a>
     <h3>Programming Language</h3>
     <p>Exploring programming languages and concepts.</p>
 </div>
-   
+
+<!-- Picture 13 -->
 <div class="gallery-item">
-    <img src="image13.jpg" alt="HTML">
+    <a href="image13.jpg" target="_blank">
+        <img src="image13.jpg" alt="HTML">
+    </a>
     <h3>HTML</h3>
     <p>Building the structure of modern websites.</p>
 </div>
 
+<!-- Picture 14 -->
 <div class="gallery-item">
-    <img src="image14.jpg" alt="CSS">
+    <a href="image14.jpg" target="_blank">
+        <img src="image14.jpg" alt="CSS">
+    </a>
     <h3>CSS</h3>
     <p>Designing beautiful and responsive web pages.</p>
 </div>
 
+<!-- Picture 15 -->
 <div class="gallery-item">
-    <img src="image15.jpg" alt="JavaScript">
+    <a href="image15.jpg" target="_blank">
+        <img src="image15.jpg" alt="JavaScript">
+    </a>
     <h3>JavaScript</h3>
     <p>Adding interactive features to websites.</p>
 </div>
@@ -562,37 +737,58 @@ html {
 <p class="goal-text">My goal is to build professional and useful websites.</p>
 </div>
 
-
 <h2 id="skills">My Skills</h2>
 
 <div class="skills">
 
     <div class="skill">
         <h3>HTML</h3>
+        <p>Building the structure of websites.</p>
     </div>
 
     <div class="skill">
         <h3>CSS</h3>
+        <p>Designing attractive web pages.</p>
     </div>
 
     <div class="skill">
         <h3>JavaScript</h3>
+        <p>Adding interactive features to websites.</p>
     </div>
 
     <div class="skill">
         <h3>Responsive Web Design</h3>
-    </div>
-
-    <div class="skill">
-        <h3>MS Excel</h3>
-    </div>
-
-    <div class="skill">
-        <h3>Data Entry</h3>
+        <p>Creating websites for different screen sizes.</p>
     </div>
 
     <div class="skill">
         <h3>Git & GitHub</h3>
+        <p>Managing and publishing website projects.</p>
+    </div>
+
+    <div class="skill">
+        <h3>Bootstrap</h3>
+        <p>Building responsive layouts quickly.</p>
+    </div>
+
+    <div class="skill">
+        <h3>UI/UX Design</h3>
+        <p>Creating simple and user-friendly interfaces.</p>
+    </div>
+
+    <div class="skill">
+        <h3>SEO Basics</h3>
+        <p>Improving website visibility in search engines.</p>
+    </div>
+
+    <div class="skill">
+        <h3>Website Optimization</h3>
+        <p>Improving website speed and performance.</p>
+    </div>
+
+    <div class="skill">
+        <h3>API Integration</h3>
+        <p>Connecting websites with useful online services.</p>
     </div>
 
 </div>
@@ -677,7 +873,21 @@ form.addEventListener("submit", async function(event) {
         alert("Something went wrong. Please try again.");
     }
 });
-</script>     
+
+window.addEventListener("scroll", function() {
+    const topBtn = document.getElementById("topBtn");
+
+    if (window.scrollY > 300) {
+        topBtn.style.display = "block";
+    } else {
+        topBtn.style.display = "none";
+    }
+});
+</script>
+
+<button id="topBtn" onclick="window.scrollTo({top: 0, behavior: 'smooth'})">
+    ↑ Top
+</button>     
 
 </body>
 

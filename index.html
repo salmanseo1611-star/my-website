@@ -1,3 +1,24 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+    <meta charset="UTF-8">
+
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <meta name="description"
+        content="Muhammad Salman - Web Development Portfolio. Explore my web development skills, services, projects and contact information.">
+
+    <meta name="keywords"
+        content="Muhammad Salman, Web Developer, Web Development, HTML, CSS, JavaScript, Portfolio">
+
+    <meta name="author" content="Muhammad Salman">
+
+    <title>Muhammad Salman | Web Developer Portfolio</title>
+
+    <link rel="icon" type="image/jpeg" href="image1.jpg">
+
 
 <style>
 
@@ -18,7 +39,10 @@ body {
     transition: 0.4s;
 }
 
-/* DARK MODE */
+
+/* =========================
+   DARK MODE
+========================= */
 
 body.dark-mode {
     background: #111827;
@@ -33,7 +57,9 @@ body.dark-mode .goal-box,
 body.dark-mode .contact-box,
 body.dark-mode .service,
 body.dark-mode .project,
-body.dark-mode .skill {
+body.dark-mode .skill,
+body.dark-mode .education-box,
+body.dark-mode .certificate-box {
     background: #1f2937;
     color: white;
 }
@@ -47,7 +73,10 @@ body.dark-mode h3 {
     color: #60a5fa;
 }
 
-/* NAVIGATION */
+
+/* =========================
+   NAVIGATION
+========================= */
 
 nav {
     background: linear-gradient(90deg, darkblue, #2563eb);
@@ -72,7 +101,22 @@ nav a:hover {
     color: yellow;
 }
 
-/* CONTAINER */
+
+/* MOBILE MENU BUTTON */
+
+#menuBtn {
+    display: none;
+    background: white;
+    color: darkblue;
+    padding: 8px 14px;
+    margin: 0 auto 10px;
+    font-size: 20px;
+}
+
+
+/* =========================
+   CONTAINER
+========================= */
 
 .container {
     width: 100%;
@@ -82,7 +126,10 @@ nav a:hover {
     background: white;
 }
 
-/* HERO */
+
+/* =========================
+   HERO
+========================= */
 
 .hero {
     text-align: center;
@@ -91,6 +138,7 @@ nav a:hover {
     border-radius: 25px;
     background: linear-gradient(135deg, #ffffff, #eaf5ff);
     box-shadow: 0 8px 25px #aaa;
+    animation: fadeIn 1s ease;
 }
 
 .hero h1 {
@@ -104,7 +152,33 @@ nav a:hover {
     color: #555;
 }
 
-/* BUTTONS */
+.hero-buttons {
+    margin-top: 25px;
+}
+
+
+/* =========================
+   ANIMATIONS
+========================= */
+
+@keyframes fadeIn {
+
+    from {
+        opacity: 0;
+        transform: translateY(20px);
+    }
+
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+
+}
+
+
+/* =========================
+   BUTTONS
+========================= */
 
 button {
     background: linear-gradient(135deg, darkblue, #2563eb);
@@ -124,7 +198,10 @@ button:hover {
     background: linear-gradient(135deg, green, #16a34a);
 }
 
-/* HEADINGS */
+
+/* =========================
+   HEADINGS
+========================= */
 
 h2 {
     color: green;
@@ -137,7 +214,256 @@ h3 {
     color: darkblue;
 }
 
-/* GALLERY */
+
+/* =========================
+   ABOUT / GOAL / CONTACT
+========================= */
+
+.about-box,
+.goal-box,
+.contact-box,
+.education-box,
+.certificate-box {
+    max-width: 750px;
+    margin: 40px auto;
+    padding: 30px;
+    background: white;
+    border-radius: 20px;
+    box-shadow: 0 5px 18px #aaa;
+    text-align: center;
+    transition: 0.3s;
+}
+
+.about-box:hover,
+.goal-box:hover,
+.contact-box:hover,
+.education-box:hover,
+.certificate-box:hover {
+    transform: translateY(-5px);
+}
+
+.about-box p,
+.goal-box p,
+.contact-box p,
+.education-box p,
+.certificate-box p {
+    font-size: 18px;
+    line-height: 1.7;
+}
+
+
+/* =========================
+   SERVICES
+========================= */
+
+.services {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 25px;
+    max-width: 1100px;
+    margin: auto;
+}
+
+.service {
+    background: white;
+    padding: 30px 20px;
+    border-radius: 20px;
+    text-align: center;
+    box-shadow: 0 5px 15px #aaa;
+    transition: 0.3s;
+}
+
+.service:hover {
+    transform: translateY(-8px);
+}
+
+.service-icon {
+    font-size: 45px;
+    margin-bottom: 10px;
+}
+
+.service h3 {
+    font-size: 21px;
+}
+
+.service p {
+    color: #666;
+    line-height: 1.6;
+}
+
+
+/* =========================
+   SKILLS
+========================= */
+
+.skills {
+    max-width: 850px;
+    margin: auto;
+}
+
+.skill {
+    background: white;
+    padding: 20px;
+    margin: 20px 0;
+    border-radius: 15px;
+    box-shadow: 0 4px 12px #aaa;
+    transition: 0.3s;
+}
+
+.skill:hover {
+    transform: translateY(-4px);
+}
+
+.skill-title {
+    display: flex;
+    justify-content: space-between;
+    font-weight: bold;
+    margin-bottom: 8px;
+}
+
+.progress {
+    width: 100%;
+    height: 15px;
+    background: #ddd;
+    border-radius: 20px;
+    overflow: hidden;
+}
+
+.progress-bar {
+    height: 100%;
+    background: linear-gradient(90deg, darkblue, #2563eb);
+    border-radius: 20px;
+    width: 0;
+    transition: width 1.5s ease;
+}
+
+
+/* =========================
+   PROJECTS
+========================= */
+
+.projects {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 25px;
+    max-width: 1100px;
+    margin: auto;
+}
+
+.project {
+    background: white;
+    border-radius: 20px;
+    overflow: hidden;
+    box-shadow: 0 5px 15px #aaa;
+    transition: 0.3s;
+}
+
+.project:hover {
+    transform: translateY(-7px);
+}
+
+.project img {
+    width: 100%;
+    height: 210px;
+    object-fit: cover;
+}
+
+.project-content {
+    padding: 20px;
+}
+
+.project-content h3 {
+    margin-top: 0;
+}
+
+.project-content p {
+    color: #666;
+    line-height: 1.6;
+}
+
+.project-buttons {
+    margin-top: 15px;
+}
+
+.project-btn {
+    display: inline-block;
+    text-decoration: none;
+    background: darkblue;
+    color: white;
+    padding: 9px 15px;
+    border-radius: 20px;
+    margin: 4px;
+    transition: 0.3s;
+}
+
+.project-btn:hover {
+    background: green;
+    transform: translateY(-2px);
+}
+
+
+/* =========================
+   CV
+========================= */
+
+.cv-section {
+    text-align: center;
+    margin: 60px auto;
+    padding: 35px;
+    max-width: 800px;
+    background: linear-gradient(135deg, #eef7ff, #ffffff);
+    border-radius: 20px;
+    box-shadow: 0 5px 18px #aaa;
+}
+
+.cv-btn {
+    display: inline-block;
+    text-decoration: none;
+    background: darkblue;
+    color: white;
+    padding: 14px 25px;
+    border-radius: 25px;
+    font-weight: bold;
+    box-shadow: 0 5px 12px #aaa;
+    transition: 0.3s;
+}
+
+.cv-btn:hover {
+    background: green;
+    transform: translateY(-3px);
+}
+
+
+/* =========================
+   EDUCATION
+========================= */
+
+.education-details {
+    margin-top: 20px;
+}
+
+.education-details strong {
+    color: darkblue;
+}
+
+
+/* =========================
+   CERTIFICATE
+========================= */
+
+.certificate-box img {
+    width: 100%;
+    max-width: 650px;
+    height: auto;
+    border-radius: 15px;
+    box-shadow: 0 5px 15px #aaa;
+    margin-top: 15px;
+}
+
+
+/* =========================
+   GALLERY
+========================= */
 
 .gallery {
     display: grid;
@@ -188,7 +514,8 @@ h3 {
     margin: 0 15px 18px;
 }
 
-/* BIG GALLERY CARDS */
+
+/* DIFFERENT CARD SIZES */
 
 .gallery-item:nth-child(1) {
     grid-column: span 2;
@@ -247,153 +574,14 @@ h3 {
     height: 320px;
 }
 
-/* ABOUT / GOAL / CONTACT */
 
-.about-box,
-.goal-box,
-.contact-box {
-    max-width: 750px;
-    margin: 40px auto;
-    padding: 30px;
-    background: white;
-    border-radius: 20px;
-    box-shadow: 0 5px 18px #aaa;
-    text-align: center;
-    transition: 0.3s;
-}
-
-.about-box:hover,
-.goal-box:hover,
-.contact-box:hover {
-    transform: translateY(-5px);
-}
-
-.about-box p,
-.goal-box p,
-.contact-box p {
-    font-size: 18px;
-    line-height: 1.7;
-}
-
-/* SERVICES */
-
-.services {
-    display: grid;
-    grid-template-columns: repeat(3, 1fr);
-    gap: 25px;
-    max-width: 1100px;
-    margin: auto;
-}
-
-.service {
-    background: white;
-    padding: 30px 20px;
-    border-radius: 20px;
-    text-align: center;
-    box-shadow: 0 5px 15px #aaa;
-    transition: 0.3s;
-}
-
-.service:hover {
-    transform: translateY(-8px);
-}
-
-.service-icon {
-    font-size: 45px;
-    margin-bottom: 10px;
-}
-
-.service h3 {
-    font-size: 21px;
-}
-
-.service p {
-    color: #666;
-    line-height: 1.6;
-}
-
-/* SKILLS */
-
-.skills {
-    max-width: 850px;
-    margin: auto;
-}
-
-.skill {
-    background: white;
-    padding: 20px;
-    margin: 20px 0;
-    border-radius: 15px;
-    box-shadow: 0 4px 12px #aaa;
-}
-
-.skill-title {
-    display: flex;
-    justify-content: space-between;
-    font-weight: bold;
-    margin-bottom: 8px;
-}
-
-.progress {
-    width: 100%;
-    height: 15px;
-    background: #ddd;
-    border-radius: 20px;
-    overflow: hidden;
-}
-
-.progress-bar {
-    height: 100%;
-    background: linear-gradient(90deg, darkblue, #2563eb);
-    border-radius: 20px;
-}
-
-/* PROJECTS */
-
-.projects {
-    display: grid;
-    grid-template-columns: repeat(3, 1fr);
-    gap: 25px;
-    max-width: 1100px;
-    margin: auto;
-}
-
-.project {
-    background: white;
-    border-radius: 20px;
-    overflow: hidden;
-    box-shadow: 0 5px 15px #aaa;
-    transition: 0.3s;
-}
-
-.project:hover {
-    transform: translateY(-7px);
-}
-
-.project img {
-    width: 100%;
-    height: 210px;
-    object-fit: cover;
-}
-
-.project-content {
-    padding: 20px;
-}
-
-.project-content h3 {
-    margin-top: 0;
-}
-
-.project-content p {
-    color: #666;
-    line-height: 1.6;
-}
-
-/* SOCIAL MEDIA */
+/* =========================
+   SOCIAL LINKS
+========================= */
 
 .social-links {
     text-align: center;
-    margin: 30px 0;
+    margin: 30px auto 50px;
 }
 
 .social-links a {
@@ -412,29 +600,10 @@ h3 {
     transform: translateY(-3px);
 }
 
-/* CV */
 
-.cv-section {
-    text-align: center;
-    margin: 50px 0;
-}
-
-.cv-btn {
-    display: inline-block;
-    text-decoration: none;
-    background: darkblue;
-    color: white;
-    padding: 14px 25px;
-    border-radius: 25px;
-    font-weight: bold;
-    box-shadow: 0 5px 12px #aaa;
-}
-
-.cv-btn:hover {
-    background: green;
-}
-
-/* CONTACT FORM */
+/* =========================
+   CONTACT FORM
+========================= */
 
 #contact-form {
     max-width: 650px;
@@ -473,13 +642,20 @@ input:focus,
 textarea:focus {
     outline: none;
     border: 2px solid darkblue;
+    box-shadow: 0 0 5px lightblue;
 }
 
 textarea {
     resize: vertical;
 }
 
-/* SUCCESS MESSAGE */
+.send-btn {
+    display: block;
+    margin: 15px auto 0;
+}
+
+
+/* SUCCESS */
 
 #success-message {
     display: none;
@@ -489,7 +665,10 @@ textarea {
     font-size: 18px;
 }
 
-/* DARK MODE BUTTON */
+
+/* =========================
+   DARK MODE BUTTON
+========================= */
 
 #darkModeBtn {
     position: fixed;
@@ -503,7 +682,10 @@ textarea {
     font-size: 22px;
 }
 
-/* BACK TO TOP */
+
+/* =========================
+   BACK TO TOP
+========================= */
 
 #topBtn {
     display: none;
@@ -518,7 +700,10 @@ textarea {
     font-size: 24px;
 }
 
-/* FOOTER */
+
+/* =========================
+   FOOTER
+========================= */
 
 footer {
     background: linear-gradient(90deg, darkblue, #2563eb);
@@ -532,7 +717,10 @@ footer p {
     margin: 5px;
 }
 
-/* TABLET */
+
+/* =========================
+   TABLET
+========================= */
 
 @media (max-width: 900px) {
 
@@ -550,18 +738,29 @@ footer p {
 
 }
 
-/* MOBILE */
+
+/* =========================
+   MOBILE
+========================= */
 
 @media (max-width: 600px) {
 
     nav {
-        padding: 12px 5px;
+        padding: 10px;
     }
 
     nav a {
-        display: inline-block;
-        margin: 5px;
+        display: none;
+        margin: 7px;
         font-size: 14px;
+    }
+
+    nav.mobile-open a {
+        display: block;
+    }
+
+    #menuBtn {
+        display: block;
     }
 
     .container {
@@ -619,7 +818,9 @@ footer p {
 
     .about-box,
     .goal-box,
-    .contact-box {
+    .contact-box,
+    .education-box,
+    .certificate-box {
         padding: 20px;
     }
 
@@ -653,7 +854,12 @@ footer p {
 }
 
 </style>
+
+</head>
+
+
 <body id="top">
+
 
 <!-- DARK MODE BUTTON -->
 
@@ -662,14 +868,26 @@ footer p {
 
 <!-- NAVIGATION -->
 
-<nav>
+<nav id="navbar">
+
+    <button id="menuBtn" onclick="toggleMenu()">☰</button>
 
     <a href="#home">Home</a>
+
     <a href="#about">About</a>
+
     <a href="#services">Services</a>
+
     <a href="#skills">Skills</a>
+
     <a href="#projects">Projects</a>
+
+    <a href="#cv">CV</a>
+
+    <a href="#education">Education</a>
+
     <a href="#gallery">Gallery</a>
+
     <a href="#contact">Contact</a>
 
 </nav>
@@ -678,32 +896,48 @@ footer p {
 <div class="container">
 
 
-<!-- HERO -->
+<!-- =========================
+     HERO
+========================= -->
 
 <div class="hero">
 
-    <h1 id="home">Hello, I'm Muhammad Salman</h1>
+    <h1 id="home">
+        Hello, I'm Muhammad Salman
+    </h1>
 
     <p>
         Web Development Learner & Aspiring Web Developer
     </p>
 
-    <button onclick="location.href='#contact'">
-        Contact Me
-    </button>
+    <div class="hero-buttons">
 
-    <button onclick="location.href='#projects'">
-        My Projects
-    </button>
+        <button onclick="location.href='#contact'">
+            Contact Me
+        </button>
+
+        <button onclick="location.href='#projects'">
+            My Projects
+        </button>
+
+        <button onclick="location.href='#services'">
+            My Services
+        </button>
+
+    </div>
 
 </div>
 
 
-<!-- ABOUT -->
+<!-- =========================
+     ABOUT
+========================= -->
 
 <div class="about-box">
 
-    <h2 id="about">About Me</h2>
+    <h2 id="about">
+        About Me
+    </h2>
 
     <p>
         I am learning Web Development and improving my computer skills.
@@ -718,17 +952,25 @@ footer p {
 </div>
 
 
-<!-- SERVICES -->
+<!-- =========================
+     SERVICES
+========================= -->
 
-<h2 id="services">My Services</h2>
+<h2 id="services">
+    My Services
+</h2>
+
 
 <div class="services">
+
 
     <div class="service">
 
         <div class="service-icon">🌐</div>
 
-        <h3>Web Development</h3>
+        <h3>
+            Web Development
+        </h3>
 
         <p>
             Creating modern and responsive websites using HTML, CSS
@@ -742,7 +984,9 @@ footer p {
 
         <div class="service-icon">🎨</div>
 
-        <h3>Web Design</h3>
+        <h3>
+            Web Design
+        </h3>
 
         <p>
             Designing clean, attractive and user-friendly website layouts.
@@ -755,7 +999,9 @@ footer p {
 
         <div class="service-icon">📱</div>
 
-        <h3>Responsive Design</h3>
+        <h3>
+            Responsive Design
+        </h3>
 
         <p>
             Creating websites that work properly on mobile, tablet
@@ -769,7 +1015,9 @@ footer p {
 
         <div class="service-icon">📊</div>
 
-        <h3>Data Entry</h3>
+        <h3>
+            Data Entry
+        </h3>
 
         <p>
             Organizing and managing information accurately using
@@ -783,7 +1031,9 @@ footer p {
 
         <div class="service-icon">🔍</div>
 
-        <h3>SEO Basics</h3>
+        <h3>
+            SEO Basics
+        </h3>
 
         <p>
             Applying basic SEO techniques to improve website visibility.
@@ -796,7 +1046,9 @@ footer p {
 
         <div class="service-icon">⚡</div>
 
-        <h3>Website Optimization</h3>
+        <h3>
+            Website Optimization
+        </h3>
 
         <p>
             Improving website structure, usability and overall performance.
@@ -804,12 +1056,18 @@ footer p {
 
     </div>
 
+
 </div>
 
 
-<!-- SKILLS -->
+<!-- =========================
+     SKILLS
+========================= -->
 
-<h2 id="skills">My Skills</h2>
+<h2 id="skills">
+    My Skills
+</h2>
+
 
 <div class="skills">
 
@@ -822,7 +1080,11 @@ footer p {
         </div>
 
         <div class="progress">
-            <div class="progress-bar" style="width:90%;"></div>
+
+            <div class="progress-bar"
+                 data-width="90%">
+            </div>
+
         </div>
 
     </div>
@@ -836,7 +1098,11 @@ footer p {
         </div>
 
         <div class="progress">
-            <div class="progress-bar" style="width:85%;"></div>
+
+            <div class="progress-bar"
+                 data-width="85%">
+            </div>
+
         </div>
 
     </div>
@@ -850,7 +1116,11 @@ footer p {
         </div>
 
         <div class="progress">
-            <div class="progress-bar" style="width:70%;"></div>
+
+            <div class="progress-bar"
+                 data-width="70%">
+            </div>
+
         </div>
 
     </div>
@@ -864,7 +1134,11 @@ footer p {
         </div>
 
         <div class="progress">
-            <div class="progress-bar" style="width:80%;"></div>
+
+            <div class="progress-bar"
+                 data-width="80%">
+            </div>
+
         </div>
 
     </div>
@@ -878,7 +1152,11 @@ footer p {
         </div>
 
         <div class="progress">
-            <div class="progress-bar" style="width:65%;"></div>
+
+            <div class="progress-bar"
+                 data-width="65%">
+            </div>
+
         </div>
 
     </div>
@@ -892,7 +1170,11 @@ footer p {
         </div>
 
         <div class="progress">
-            <div class="progress-bar" style="width:70%;"></div>
+
+            <div class="progress-bar"
+                 data-width="70%">
+            </div>
+
         </div>
 
     </div>
@@ -901,25 +1183,44 @@ footer p {
 </div>
 
 
-<!-- PROJECTS -->
+<!-- =========================
+     PROJECTS
+========================= -->
 
-<h2 id="projects">My Projects</h2>
+<h2 id="projects">
+    My Projects
+</h2>
+
 
 <div class="projects">
 
 
     <div class="project">
 
-        <img src="image1.jpg" alt="Personal Website">
+        <img src="image1.jpg"
+             alt="Personal Website">
 
         <div class="project-content">
 
-            <h3>Personal Website</h3>
+            <h3>
+                Personal Website
+            </h3>
 
             <p>
                 A responsive personal portfolio website created using
-                HTML and CSS with modern sections and navigation.
+                HTML, CSS and JavaScript with professional sections,
+                navigation and responsive design.
             </p>
+
+            <div class="project-buttons">
+
+                <a class="project-btn"
+                   href="https://salmanseo1611-star.github.io/my-website/"
+                   target="_blank">
+                    Live Demo
+                </a>
+
+            </div>
 
         </div>
 
@@ -928,17 +1229,29 @@ footer p {
 
     <div class="project">
 
-        <img src="image8new.jpg" alt="UI UX Project">
+        <img src="image8new.jpg"
+             alt="UI UX Design Project">
 
         <div class="project-content">
 
-            <h3>UI/UX Design</h3>
+            <h3>
+                UI/UX Design
+            </h3>
 
             <p>
                 A clean and user-friendly website interface designed
                 with organized sections and modern layouts.
             </p>
 
+            <div class="project-buttons">
+
+                <a class="project-btn"
+                   href="#gallery">
+                    View Project
+                </a>
+
+            </div>
+
         </div>
 
     </div>
@@ -946,16 +1259,28 @@ footer p {
 
     <div class="project">
 
-        <img src="image16.jpg" alt="Dashboard Project">
+        <img src="image16.jpg"
+             alt="Website Dashboard">
 
         <div class="project-content">
 
-            <h3>Website Dashboard</h3>
+            <h3>
+                Website Dashboard
+            </h3>
 
             <p>
                 A professional dashboard concept with organized
-                information and simple navigation.
+                information, useful sections and simple navigation.
             </p>
+
+            <div class="project-buttons">
+
+                <a class="project-btn"
+                   href="#gallery">
+                    View Project
+                </a>
+
+            </div>
 
         </div>
 
@@ -965,26 +1290,98 @@ footer p {
 </div>
 
 
-<!-- CV -->
+<!-- =========================
+     CV
+========================= -->
 
-<div class="cv-section">
+<div class="cv-section" id="cv">
 
-    <h2>My CV</h2>
+    <h2>
+        My CV
+    </h2>
 
     <p>
-        Download my CV to learn more about my skills and education.
+        Download my CV to learn more about my education,
+        skills and web development experience.
     </p>
 
-    <a class="cv-btn" href="cv.pdf" download>
+    <a class="cv-btn"
+       href="cv.pdf"
+       download>
+
         📄 Download CV
+
     </a>
 
 </div>
 
 
-<!-- GALLERY -->
+<!-- =========================
+     EDUCATION
+========================= -->
 
-<h2 id="gallery">My Projects & Work</h2>
+<div class="education-box"
+     id="education">
+
+    <h2>
+        Education
+    </h2>
+
+    <div class="education-details">
+
+        <p>
+            <strong>Qualification:</strong>
+            Intermediate ICS
+        </p>
+
+        <p>
+            <strong>College:</strong>
+            Sapphire College Mongi Banglaw
+        </p>
+
+        <p>
+            <strong>Year:</strong>
+            2025
+        </p>
+
+        <p>
+            <strong>Focus:</strong>
+            Computer Science & Web Development
+        </p>
+
+    </div>
+
+</div>
+
+
+<!-- =========================
+     CERTIFICATE
+========================= -->
+
+<div class="certificate-box">
+
+    <h2>
+        Web Development Certificate
+    </h2>
+
+    <p>
+        Web Development training certificate.
+    </p>
+
+    <img src="certificate.jpg"
+         alt="Muhammad Salman Web Development Certificate">
+
+</div>
+
+
+<!-- =========================
+     GALLERY
+========================= -->
+
+<h2 id="gallery">
+    My Projects & Work
+</h2>
+
 
 <div class="gallery">
 
@@ -993,11 +1390,17 @@ footer p {
 
 <div class="gallery-item">
 
-    <a href="image1.jpg" target="_blank">
-        <img src="image1.jpg" alt="Web Development">
+    <a href="image1.jpg"
+       target="_blank">
+
+        <img src="image1.jpg"
+             alt="Web Development">
+
     </a>
 
-    <h3>Web Development</h3>
+    <h3>
+        Web Development
+    </h3>
 
     <p>
         Web development is the process of creating modern and useful
@@ -1016,11 +1419,17 @@ footer p {
 
 <div class="gallery-item">
 
-    <a href="photo.jpg" target="_blank">
-        <img src="photo.jpg" alt="Coding">
+    <a href="photo.jpg"
+       target="_blank">
+
+        <img src="photo.jpg"
+             alt="Coding">
+
     </a>
 
-    <h3>Coding</h3>
+    <h3>
+        Coding
+    </h3>
 
     <p>
         Writing clean and effective code.
@@ -1033,11 +1442,17 @@ footer p {
 
 <div class="gallery-item">
 
-    <a href="picture.jpg" target="_blank">
-        <img src="picture.jpg" alt="Network Connectivity">
+    <a href="picture.jpg"
+       target="_blank">
+
+        <img src="picture.jpg"
+             alt="Network Connectivity">
+
     </a>
 
-    <h3>Network Connectivity</h3>
+    <h3>
+        Network Connectivity
+    </h3>
 
     <p>
         Network connectivity allows computers and devices to
@@ -1056,11 +1471,17 @@ footer p {
 
 <div class="gallery-item">
 
-    <a href="image4new.jpg" target="_blank">
-        <img src="image4new.jpg" alt="Web Design">
+    <a href="image4new.jpg"
+       target="_blank">
+
+        <img src="image4new.jpg"
+             alt="Web Design">
+
     </a>
 
-    <h3>Web Design</h3>
+    <h3>
+        Web Design
+    </h3>
 
     <p>
         Creating clean and modern web designs.
@@ -1073,11 +1494,17 @@ footer p {
 
 <div class="gallery-item">
 
-    <a href="image5.jpg" target="_blank">
-        <img src="image5.jpg" alt="Web Design">
+    <a href="image5.jpg"
+       target="_blank">
+
+        <img src="image5.jpg"
+             alt="Web Design">
+
     </a>
 
-    <h3>Web Design</h3>
+    <h3>
+        Web Design
+    </h3>
 
     <p>
         Designing attractive and user-friendly websites.
@@ -1090,11 +1517,17 @@ footer p {
 
 <div class="gallery-item">
 
-    <a href="image6.jpg" target="_blank">
-        <img src="image6.jpg" alt="Coding">
+    <a href="image6.jpg"
+       target="_blank">
+
+        <img src="image6.jpg"
+             alt="Coding">
+
     </a>
 
-    <h3>Coding</h3>
+    <h3>
+        Coding
+    </h3>
 
     <p>
         Learning and using programming languages.
@@ -1107,11 +1540,17 @@ footer p {
 
 <div class="gallery-item">
 
-    <a href="image7.jpg" target="_blank">
-        <img src="image7.jpg" alt="Web Development">
+    <a href="image7.jpg"
+       target="_blank">
+
+        <img src="image7.jpg"
+             alt="Web Development">
+
     </a>
 
-    <h3>Web Development</h3>
+    <h3>
+        Web Development
+    </h3>
 
     <p>
         Developing modern and functional websites.
@@ -1124,11 +1563,17 @@ footer p {
 
 <div class="gallery-item">
 
-    <a href="image8new.jpg" target="_blank">
-        <img src="image8new.jpg" alt="UI UX Design">
+    <a href="image8new.jpg"
+       target="_blank">
+
+        <img src="image8new.jpg"
+             alt="UI UX Design">
+
     </a>
 
-    <h3>UI/UX Design</h3>
+    <h3>
+        UI/UX Design
+    </h3>
 
     <p>
         UI/UX design focuses on creating simple and user-friendly
@@ -1142,11 +1587,17 @@ footer p {
 
 <div class="gallery-item">
 
-    <a href="image9.jpg" target="_blank">
-        <img src="image9.jpg" alt="Computer Technology">
+    <a href="image9.jpg"
+       target="_blank">
+
+        <img src="image9.jpg"
+             alt="Computer Technology">
+
     </a>
 
-    <h3>Computer Technology</h3>
+    <h3>
+        Computer Technology
+    </h3>
 
     <p>
         Exploring modern computer technology.
@@ -1159,11 +1610,17 @@ footer p {
 
 <div class="gallery-item">
 
-    <a href="image10.jpg" target="_blank">
-        <img src="image10.jpg" alt="Programming">
+    <a href="image10.jpg"
+       target="_blank">
+
+        <img src="image10.jpg"
+             alt="Programming">
+
     </a>
 
-    <h3>Programming</h3>
+    <h3>
+        Programming
+    </h3>
 
     <p>
         Learning programming and coding skills.
@@ -1176,11 +1633,17 @@ footer p {
 
 <div class="gallery-item">
 
-    <a href="image11.jpg" target="_blank">
-        <img src="image11.jpg" alt="Web Design">
+    <a href="image11.jpg"
+       target="_blank">
+
+        <img src="image11.jpg"
+             alt="Web Design">
+
     </a>
 
-    <h3>Web Design</h3>
+    <h3>
+        Web Design
+    </h3>
 
     <p>
         Designing modern and creative websites.
@@ -1193,11 +1656,17 @@ footer p {
 
 <div class="gallery-item">
 
-    <a href="image12new.jpg" target="_blank">
-        <img src="image12new.jpg" alt="Programming Language">
+    <a href="image12new.jpg"
+       target="_blank">
+
+        <img src="image12new.jpg"
+             alt="Programming Language">
+
     </a>
 
-    <h3>Programming Language</h3>
+    <h3>
+        Programming Language
+    </h3>
 
     <p>
         Exploring programming languages and concepts.
@@ -1210,11 +1679,17 @@ footer p {
 
 <div class="gallery-item">
 
-    <a href="image13new.jpg" target="_blank">
-        <img src="image13new.jpg" alt="HTML">
+    <a href="image13new.jpg"
+       target="_blank">
+
+        <img src="image13new.jpg"
+             alt="HTML">
+
     </a>
 
-    <h3>HTML</h3>
+    <h3>
+        HTML
+    </h3>
 
     <p>
         Building the structure of modern websites.
@@ -1227,11 +1702,17 @@ footer p {
 
 <div class="gallery-item">
 
-    <a href="image14new.jpg" target="_blank">
-        <img src="image14new.jpg" alt="CSS">
+    <a href="image14new.jpg"
+       target="_blank">
+
+        <img src="image14new.jpg"
+             alt="CSS">
+
     </a>
 
-    <h3>CSS</h3>
+    <h3>
+        CSS
+    </h3>
 
     <p>
         Designing beautiful and responsive web pages.
@@ -1244,11 +1725,17 @@ footer p {
 
 <div class="gallery-item">
 
-    <a href="image15.jpg" target="_blank">
-        <img src="image15.jpg" alt="JavaScript">
+    <a href="image15.jpg"
+       target="_blank">
+
+        <img src="image15.jpg"
+             alt="JavaScript">
+
     </a>
 
-    <h3>JavaScript</h3>
+    <h3>
+        JavaScript
+    </h3>
 
     <p>
         Adding interactive features to websites.
@@ -1261,11 +1748,17 @@ footer p {
 
 <div class="gallery-item">
 
-    <a href="image16.jpg" target="_blank">
-        <img src="image16.jpg" alt="Website Dashboard">
+    <a href="image16.jpg"
+       target="_blank">
+
+        <img src="image16.jpg"
+             alt="Website Dashboard">
+
     </a>
 
-    <h3>Website Dashboard</h3>
+    <h3>
+        Website Dashboard
+    </h3>
 
     <p>
         Designing organized and professional website dashboards
@@ -1278,11 +1771,15 @@ footer p {
 </div>
 
 
-<!-- GOAL -->
+<!-- =========================
+     GOAL
+========================= -->
 
 <div class="goal-box">
 
-    <h2 id="goal">My Goal</h2>
+    <h2 id="goal">
+        My Goal
+    </h2>
 
     <p>
         I want to become a professional Web Developer.
@@ -1296,32 +1793,44 @@ footer p {
 </div>
 
 
-<!-- SOCIAL MEDIA -->
+<!-- =========================
+     SOCIAL MEDIA
+========================= -->
 
-<h2>Find Me Online</h2>
+<h2>
+    Find Me Online
+</h2>
+
 
 <div class="social-links">
 
-    <a href="https://github.com/" target="_blank">
+    <a href="https://github.com/salmanseo1611-star"
+       target="_blank">
         💻 GitHub
     </a>
 
-    <a href="https://www.linkedin.com/" target="_blank">
+    <a href="https://www.linkedin.com/"
+       target="_blank">
         💼 LinkedIn
     </a>
 
-    <a href="https://www.facebook.com/" target="_blank">
+    <a href="https://www.facebook.com/"
+       target="_blank">
         📘 Facebook
     </a>
 
 </div>
 
 
-<!-- CONTACT -->
+<!-- =========================
+     CONTACT
+========================= -->
 
 <div class="contact-box">
 
-    <h2 id="contact">Contact Me</h2>
+    <h2 id="contact">
+        Contact Me
+    </h2>
 
     <p>
         You can contact me through my website.
@@ -1336,7 +1845,9 @@ footer p {
         Email:
 
         <a href="mailto:salman.seo1611@gmail.com">
+
             salman.seo1611@gmail.com
+
         </a>
 
     </p>
@@ -1344,7 +1855,9 @@ footer p {
 </div>
 
 
-<!-- CONTACT FORM -->
+<!-- =========================
+     CONTACT FORM
+========================= -->
 
 <form
     id="contact-form"
@@ -1362,7 +1875,9 @@ footer p {
 
     <div class="form-group">
 
-        <label>Name:</label>
+        <label>
+            Name:
+        </label>
 
         <input
             type="text"
@@ -1376,7 +1891,9 @@ footer p {
 
     <div class="form-group">
 
-        <label>Email:</label>
+        <label>
+            Email:
+        </label>
 
         <input
             type="email"
@@ -1390,7 +1907,9 @@ footer p {
 
     <div class="form-group">
 
-        <label>Phone:</label>
+        <label>
+            Phone:
+        </label>
 
         <input
             type="tel"
@@ -1404,7 +1923,9 @@ footer p {
 
     <div class="form-group">
 
-        <label>Message:</label>
+        <label>
+            Message:
+        </label>
 
         <textarea
             name="message"
@@ -1428,14 +1949,18 @@ footer p {
 
 
 <p id="success-message">
+
     Thank You! Your message has been sent successfully.
+
 </p>
 
 
 </div>
 
 
-<!-- FOOTER -->
+<!-- =========================
+     FOOTER
+========================= -->
 
 <footer>
 
@@ -1450,7 +1975,9 @@ footer p {
 </footer>
 
 
-<!-- BACK TO TOP -->
+<!-- =========================
+     BACK TO TOP
+========================= -->
 
 <button
     id="topBtn"
@@ -1463,11 +1990,16 @@ footer p {
 </button>
 
 
-<!-- JAVASCRIPT -->
+<!-- =========================
+     JAVASCRIPT
+========================= -->
 
 <script>
 
-/* DARK MODE */
+
+/* =========================
+   DARK MODE
+========================= */
 
 function toggleDarkMode() {
 
@@ -1476,7 +2008,9 @@ function toggleDarkMode() {
     const button =
         document.getElementById("darkModeBtn");
 
-    if (document.body.classList.contains("dark-mode")) {
+    if (
+        document.body.classList.contains("dark-mode")
+    ) {
 
         button.innerHTML = "☀️";
 
@@ -1489,7 +2023,48 @@ function toggleDarkMode() {
 }
 
 
-/* CONTACT FORM */
+/* =========================
+   MOBILE MENU
+========================= */
+
+function toggleMenu() {
+
+    const navbar =
+        document.getElementById("navbar");
+
+    navbar.classList.toggle("mobile-open");
+
+}
+
+
+/* =========================
+   SKILL PROGRESS ANIMATION
+========================= */
+
+window.addEventListener("load", function() {
+
+    const progressBars =
+        document.querySelectorAll(".progress-bar");
+
+    progressBars.forEach(function(bar) {
+
+        const width =
+            bar.getAttribute("data-width");
+
+        setTimeout(function() {
+
+            bar.style.width = width;
+
+        }, 300);
+
+    });
+
+});
+
+
+/* =========================
+   CONTACT FORM
+========================= */
 
 const form =
     document.getElementById("contact-form");
@@ -1498,62 +2073,89 @@ const successMessage =
     document.getElementById("success-message");
 
 
-form.addEventListener("submit", async function(event) {
+form.addEventListener(
+    "submit",
+    async function(event) {
 
-    event.preventDefault();
+        event.preventDefault();
 
-    const formData =
-        new FormData(form);
+        const formData =
+            new FormData(form);
 
-    const response =
-        await fetch(form.action, {
+        try {
 
-            method: "POST",
+            const response =
+                await fetch(
+                    form.action,
+                    {
+                        method: "POST",
+                        body: formData,
+                        headers: {
+                            "Accept":
+                                "application/json"
+                        }
+                    }
+                );
 
-            body: formData,
 
-            headers: {
-                "Accept": "application/json"
+            if (response.ok) {
+
+                form.reset();
+
+                successMessage.style.display =
+                    "block";
+
+                successMessage.scrollIntoView({
+                    behavior: "smooth",
+                    block: "center"
+                });
+
+            } else {
+
+                alert(
+                    "Something went wrong. Please try again."
+                );
+
             }
 
-        });
+        } catch (error) {
 
+            alert(
+                "Please check your internet connection and try again."
+            );
 
-    if (response.ok) {
-
-        form.reset();
-
-        successMessage.style.display = "block";
-
-    } else {
-
-        alert(
-            "Something went wrong. Please try again."
-        );
+        }
 
     }
+);
 
-});
 
+/* =========================
+   BACK TO TOP
+========================= */
 
-/* BACK TO TOP */
+window.addEventListener(
+    "scroll",
+    function() {
 
-window.addEventListener("scroll", function() {
+        const topBtn =
+            document.getElementById("topBtn");
 
-    const topBtn =
-        document.getElementById("topBtn");
+        if (window.scrollY > 300) {
 
-    if (window.scrollY > 300) {
+            topBtn.style.display =
+                "block";
 
-        topBtn.style.display = "block";
+        } else {
 
-    } else {
+            topBtn.style.display =
+                "none";
 
-        topBtn.style.display = "none";
+        }
 
     }
+);
 
-});
 
 </script>
 
